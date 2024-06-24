@@ -1,0 +1,138 @@
+#headerContainer {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding : 0px 0px;
+    height : 80px;
+    color : var(--font_color);
+    /* border-radius: 0px 0px 40px 40px ; */
+    box-shadow: 0px 0px 5px black;
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    background-color: var(--body_background);
+    z-index : 99;
+}
+#headerNav {
+    display : flex;
+    justify-content: space-evenly;
+    padding : 0px;
+    width : 90%;
+}
+#headerLogo {
+    padding : 10px 10px;
+    height : 54px;
+}
+
+.headerItem {
+    display : flex;
+    align-items: center;
+    height: 50px;
+    padding : 0px 10px;
+    cursor : pointer;
+    color : var(--link_color);
+    position : relative;
+    /* border-bottom : 3px solid rgba(255, 255, 255, 0); */
+    &::before{
+        content : "";
+        position : absolute;
+        background-color: #0871b8;
+        width : 100%;
+        height : 3px;
+        left : 0px;
+        bottom : 7px;
+        transform-origin: 100% 0;
+        transform : scaleX(0);
+        transition : transform 0.4s;
+    }
+    &:hover::before {
+        transform-origin: 0 0;
+        transform: scaleX(1);
+    }
+    &.active::before{
+        transform-origin: 0 0;
+        transform: scaleX(1);
+    }
+    &:active{
+        color : #2d96db;
+        transition : 0s;
+        &::before{
+            background-color:#2d96db;
+        }
+    }
+}
+
+#prefix__logoSymsee{
+    width :auto;
+    padding : 0px 0px 0px 10px;
+    height : 80px;
+ 
+}
+
+#icons{
+    padding : 0px 10px;
+    cursor : pointer;
+    display: none;
+    color : var(--link_color)
+}
+
+@media (max-width : 780px){
+    #icons {
+        display : block;
+    }
+    #icons:before{
+        content : '\2630'
+    }
+    .active #icons:before{
+        content : '\2715';
+    }
+
+    #headerNav{
+        position : fixed;
+        left : 100%;
+        top : 80px;
+        padding : 10px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        transition : 0.25s;
+        width : 95%;
+        background-color: var(--body_background);
+        border-radius: 20px;
+        margin-top : 5px;
+    }
+
+    .active #headerNav{
+        left : 2.5%;   
+    }
+
+    .headerItem {
+        padding : 30px 0px;
+        height : 30px;
+        border-radius: 0px;
+        background-color: #2a97e0;
+        border-radius: 20px;
+        margin : 5px 5px;
+        font-size: medium;
+        text-align : center;
+        justify-content: center;
+        color: white;
+        &&::before{
+            height : 0px;
+        }
+         &:hover{
+             background-color: #186ca3;
+        }
+        &.active{
+            background-color: #11496e;
+        }
+        &.active:hover{
+            background-color: #186ca3;
+        }
+    }
+}
+

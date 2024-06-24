@@ -1,0 +1,39 @@
+#toggleSwitchContainer{
+    width : 50px;
+    height : 80px;
+    padding : 5px;
+    display: flex;
+    align-items: center;
+
+    &input:checked + label::before {
+        background-color : black;
+    }
+    &input:focus + label::before {
+        background-color : black;
+    }
+}
+.switch {
+    cursor: pointer;
+    width : 30px;
+    height : 30px;
+    border-radius : 100%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color :var(--primary_color); */
+    transition : 0.3s;
+    color : var(--link_color);
+    position : relative;
+}
+
+#iconSwitch{
+    position : absolute;
+}
+
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+} 
+
+  

@@ -1,0 +1,43 @@
+#root {
+  margin: 0 auto;
+  --clr-title : #0871b8;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+main {
+  margin-top : 80px;
+  padding : 50px;
+  &>img{
+    position : fixed;
+    height: 250px;
+    Bottom : -30px;
+    left : -20px;
+    z-index : -1;
+    
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+

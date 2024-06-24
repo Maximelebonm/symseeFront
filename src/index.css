@@ -1,0 +1,97 @@
+:root {
+  /* color-scheme: light dark; 
+   theme : light
+  */
+  --body_background: white;
+  --font_color : rgb(255, 255, 255);
+  --title_color : #0871B8;
+  --body_color: rgba(255, 255, 255, 0.87);
+  --link_color : #0871b8;
+  --primary_color : #0871B8;
+  --nuance_color1 : #032D49;
+  --nuance_color2 : #04426B;
+  --nuance_color3 : #06578D;
+  --nuance_color4 : #076CAF;
+  --Secondary-color : #66B32E;
+
+  /* */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+  --primary_color : #4d4d4d;
+  --body_background : rgb(40, 44, 52);
+  --nuance_color1 : #222222;
+  --nuance_color2 : #333333;
+  --nuance_color3 : #535353;
+  --nuance_color4 : #6b6b6b;
+  --font_color : rgb(255, 255, 255);
+  --link_color : rgb(255, 255, 255);
+  --title_color : rgb(255, 255, 255);
+}
+/* :root:has(#dark:checked){
+  --clr-body-bg : var(grey)
+} */
+
+* {
+  box-sizing: border-box;  /* transition : all 0.3s ease-in-out;
+ */
+}
+
+body {
+  background-color: var(--nuance_color1);;
+  margin: 0;
+  min-width: 320px;
+  /* min-height: 100vh; */
+ 
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #92cdf5; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0871b8; /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+}
+
+h1, h2, h3, h4 {
+  margin : 0;
+  text-align: center;
+  font-family :Verdana, Geneva, Tahoma, sans-serif;
+  color : var(--title_color);
+}
+h1 {
+  font-size : 30px;
+  font-weight :bolder;
+  margin-bottom : 10px;
+}
+h2 {
+  font-size : 26px;
+  font-weight :600;
+}
+h3 {
+  font-size : 22px;
+  font-weight :600;
+}
+h4 {
+  font-size : 18px;
+  font-weight :400;
+}
+p{
+  font-size : 14px;
+  font-weight: 100;
+  font-family :Verdana, Geneva, Tahoma, sans-serif;
+}
+a {
+  text-decoration: none;
+  color : var(--font_color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;;
+}

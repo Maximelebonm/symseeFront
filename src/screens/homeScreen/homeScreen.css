@@ -1,0 +1,32 @@
+#homeContainer {
+    width:100%;
+    overflow: hidden;
+}
+#HomeImageSection {
+    color : var(--font_color);
+    text-align: center;
+    & img {
+        width : 100%;
+        border-radius: 15px;
+    }
+}
+
+#HomeContactSection{
+    height : 150px;
+    margin-top : 50px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    color : white;
+    font-size: 14;
+}
+@media (min-width : 780px) {
+    #HomeContactSection{
+   
+        align-self: center;
+        & #HomeContactSectionButton{
+        
+            align-self: center;
+        }
+    }
+}

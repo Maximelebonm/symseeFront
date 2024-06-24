@@ -1,0 +1,45 @@
+#CreateArticleScreenContainer{
+   
+}
+.CreateArticleScreenItem {
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+    &>input{
+        border-radius: 15px;
+        padding : 10px;
+        outline: none;
+        border : none;
+        background-color : var(--nuance_color4);
+        color : white; 
+        &::placeholder{
+            color : white; 
+        }
+        &::selection{
+            background-color : var(--nuance_color4);
+        }
+        &:focus{
+            background-color : var(--nuance_color4);
+        }
+    }
+    &>label{
+        text-align: center;
+        font-size: 14px;
+        color : white;
+        font-family :Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 200;
+        margin : 5px;
+    }
+    &>textarea{
+        height : auto;
+        min-height: 50px;
+        word-wrap:break-word;
+        overflow: hidden;
+    }
+}
+
+.lineArticleContainer{
+    margin-top : 20px;
+    border-radius: 15;
+    background-color: var(--nuance_color2);
+}
