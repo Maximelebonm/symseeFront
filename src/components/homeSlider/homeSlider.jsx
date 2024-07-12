@@ -1,6 +1,6 @@
 import './homeSlider.css';
 import { Swiper, SwiperSlide,useSwiper  } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,16 +10,18 @@ export const HomeSlider = () => {
     const swiper = useSwiper();
     return (
         <div id="homSliderContainer">
-            {/* <h1>
-                les images du jours au symsee
-            </h1> */}
             <Swiper
-                modules={[Navigation, Pagination]}
+                modules={[Navigation, Pagination,Autoplay]}
                 spaceBetween={0}
                 slidesPerView={1}
                 coverflowEffect={{
                     slideShadows : true
                 }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
                 navigation
                 pagination={{ clickable: true }}
                 centeredSlides={true}

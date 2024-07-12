@@ -14,7 +14,7 @@ import { UpdateArticleScreen } from '../screens/panelScreens/updateArticleScreen
 export const RoutesContainer = () =>{
     return (
         <Routes>
-        <Route path={'/admin/homepanel'} element={ 
+        {/* <Route path={'/admin/homepanel'} element={ 
             // <PrivateRoutes role={'logged'}>
             <HomePanelScreen/>}
             // </PrivateRoutes>}
@@ -33,7 +33,7 @@ export const RoutesContainer = () =>{
             // <PrivateRoutes role={'logged'}>
             <UpdateArticleScreen/>}
             // </PrivateRoutes>}
-            />
+            /> */}
 
             {/* Mes routes public */}
             <Route path='/' element={<HomeScreen/>}/>
@@ -41,7 +41,7 @@ export const RoutesContainer = () =>{
             <Route path='/actualites' element={<ActuScreen/>}/>
             <Route path='/contact' element={<ContactScreen/>}/>
             <Route path='/article/:id' element={<ArticleScreen/>}/>
-            <Route path='/admin/login' element={<LoginScreen/>}/>
+            {/* <Route path='/admin/login' element={<LoginScreen/>}/> */}
         </Routes>
         
     )

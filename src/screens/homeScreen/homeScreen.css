@@ -1,14 +1,43 @@
 #homeContainer {
     width:100%;
-    overflow: hidden;
 }
-#HomeImageSection {
+
+#HomeFirstSection {
     color : var(--font_color);
     text-align: center;
+    display : flex;
     & img {
         width : 100%;
         border-radius: 15px;
     }
+}
+#homeSliderContainer{
+    margin-right : 10px;
+    width : 75%;
+}
+#homeMeteoContainer{
+    border-radius: 50px 0 50px 0;
+    background-color: var(--nuance_color6);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    width : 25%;
+}
+.homeMeteoTitles{
+    background-color: var(--nuance_color3);
+    color : var(--font_color2);
+    padding : 10px;
+    margin-bottom : 15px;
+}
+#homeMeteoFirstTitles{
+    border-radius: 45px 0 0 0;
+    height : 45px;
+}
+#homeMeteoiframe{
+    padding : 15px 5px 0 5px;
+    border : none;
+    color : var(--font_color);
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+    outline : none;
 }
 
 #HomeContactSection{
@@ -22,11 +51,37 @@
 }
 @media (min-width : 780px) {
     #HomeContactSection{
-   
         align-self: center;
         & #HomeContactSectionButton{
-        
             align-self: center;
         }
+    }
+}
+
+@media (max-width : 1380px){
+    #HomeFirstSection {
+        width :100%;
+        flex-direction: column;
+    }
+    #homeSliderContainer{
+        width : 100%;
+    }
+    #homeMeteoContainer{
+        margin-top : 10px;
+        width :400px;
+    }
+}
+
+@media (max-width : 780px){
+    #HomeFirstSection {
+        width :100%;
+        flex-direction: column;
+    }
+    #homeSliderContainer{
+        width : 100%;
+    }
+    #homeMeteoContainer{
+        margin-top : 10px;
+        width :100%;
     }
 }

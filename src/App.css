@@ -1,29 +1,23 @@
 #root {
   margin: 0 auto;
+  
   --clr-title : #0871b8;
 }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+  flex: 1;
 }
 
 main {
   margin-top : 80px;
   padding : 50px;
-  &>img{
-    position : fixed;
-    height: 250px;
-    Bottom : -30px;
-    left : -20px;
-    z-index : -1;
-    
-  }
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -39,5 +33,11 @@ main {
   color: #888;
 }
 
+#footer{
+  /* position : absolute;
+  bottom : -2px; */
+  margin : 0;
+  padding : 0;
+}
 
 
