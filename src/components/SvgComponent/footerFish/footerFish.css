@@ -1,0 +1,21 @@
+/* #prefix__Calque_1{
+    width : 200%;
+} */
+
+ .prefix__cls-3 {
+    fill : white;
+    /* transform: translateX(-1520px); */
+} 
+@media (min-width : 1024px) {
+    .vague {
+        transform: scaleX(1) scaleY(0.5) translateY(100%);
+    }
+    .prefix__cls-3, .prefix__cls-5 {
+        fill : white;
+        transform: scaleX(0.5) scaleY(0.5) translateY(100%)translateX(100%);
+    } 
+    
+}
+/* .prefix__cls-5{
+    transform: translateX(-1520px);
+}  */

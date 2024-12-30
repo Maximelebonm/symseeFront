@@ -1,7 +1,7 @@
 import * as React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef,useEffect, useState } from "react";
+import { useRef} from "react";
 
 function Wave(props) {
   

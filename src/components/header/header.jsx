@@ -1,19 +1,21 @@
 import './header.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import MemoLogoSymsee from '../SvgComponent/logoheader/logo';
 import { Link } from 'react-router-dom';
 import MemoLogoHeader from '../SvgComponent/logoheader/logoHeader';
 import { ToggleSwitch } from '../uiElements/toggleSwitch/toggleSwitch';
-
+import { IoIosArrowDown } from "react-icons/io";
 
 
 export const Header =()=>{
-
     const [isActive, setIsActive] = useState(false);
+    const [isMobile,setIsMobile] = useState(window.innerWidth<= 760);
+
     const toggleActive = () => {
         setIsActive(!isActive);
     }
+
+
 
     useEffect(()=>{
                 const nav = document.querySelectorAll('#headerNav .headerItem');
@@ -26,14 +28,21 @@ export const Header =()=>{
                     });
                 });
     },[])
-    const activeItem = (e) => {
-    console.log(window.innerWidth)
+    
+    window.addEventListener('resize', () => {
+        const width = window.innerWidth; // Largeur de la fenêtre
+        if (width <= 760) {
+            setIsMobile(true)
+        }   else{
+            setIsMobile(false)
+        }
+      });
+    const activeItem = () => {
         const clickedItem = window.innerWidth;
- 
-        if(clickedItem <= 780){
-            console.log('pass')
+        if(clickedItem <= 760){
             toggleActive() 
         }
+      
     }
 
     return (
@@ -49,22 +58,30 @@ export const Header =()=>{
             <ul id='headerNav' onClick={activeItem}>
                 <Link to='/'>
                     <li className='headerItem' onClick={activeItem}>
-                        Acceuil 
+                        ACCEUIL 
                     </li>
                 </Link>
-                <Link to='/about'>
+                {!isMobile ?
+                <li className='headerItem hasSubmenu'>
+                <Link to='/about'><span className='headerItem'>À PROPOS DE NOUS<IoIosArrowDown /></span></Link>
+                    <ul className={`submenu`}>
+                        <Link to='/about'><li onClick={activeItem}>À PROPOS DE NOUS</li></Link>
+                        <Link to='/gemapi'><li onClick={activeItem}>GEMAPI</li></Link>
+                    </ul>
+                </li> : 
+                <>
+                    <Link to='/about'><li onClick={activeItem} className='headerItem'>À PROPOS DE NOUS</li></Link>
+                    <Link to='/gemapi'><li onClick={activeItem} className='headerItem'>GEMAPI</li></Link>
+                </>   
+             }
+                <Link to='/organisation'>
                     <li className='headerItem' onClick={activeItem}>
-                        A propos de nous
-                    </li>
-                </Link>
-                <Link to='/actualites'>
-                    <li className='headerItem' onClick={activeItem}>
-                        actualités
+                        ORGANISATION
                     </li>
                 </Link>
                 <Link to='/contact'>
                     <li className='headerItem' onClick={activeItem}>
-                        Contact
+                        CONTACT
                     </li>
                 </Link>
             </ul>

@@ -5,6 +5,8 @@
   --body_background: white;
   --font_color : rgb(0, 0, 0);
   --font_color2 :rgb(255, 255, 255);
+  --font_color3 : #0c4a6e;
+
   --title_color : #0871B8;
   --body_color: rgba(255, 255, 255, 0.87);
   --link_color : #0871b8;
@@ -15,13 +17,14 @@
   --nuance_color5 : #e0f2fe;
   --nuance_color6 : #eff6ff;
   --Secondary-color : #66B32E;
-
+  --fish_color : #0871B8;
   /* */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  font-family : sans-serif;
   padding : 0px;
   margin : 0px;
 }
@@ -35,8 +38,12 @@
   --nuance_color4 : #6b6b6b;
   --nuance_color5 :#a1a1aa;
   --nuance_color6 : #fafafa;
+  --fish_color : #ffffff;
+
   --font_color : rgb(255, 255, 255);
-  --font_color2 : rgb(0, 0, 0);
+  --font_color2 : rgb(255, 255, 255);
+  --font_color3 : #a1a1aa;
+
   --link_color : rgb(255, 255, 255);
   --title_color : rgb(255, 255, 255);
 }
@@ -54,8 +61,8 @@ body {
   margin: 0;
   min-width: 320px;
   padding : 0px;
-  /* min-height: 100vh; */
- 
+  width : 100%;
+  display: flex;
 }
 
 body::-webkit-scrollbar {
@@ -73,35 +80,69 @@ body::-webkit-scrollbar-thumb {
 
 h1, h2, h3, h4 {
   margin : 0;
-  text-align: center;
-  font-family :Verdana, Geneva, Tahoma, sans-serif;
   color : var(--title_color);
 }
-h1 {
-  font-size : 30px;
-  font-weight :bolder;
-  margin-bottom : 10px;
+.title {
+  display: inline-block; /* Change le comportement de la div */
+  width: auto; /* S'ajuste à son contenu */
+  padding: 10px; /* Facultatif : Ajoute un espace autour du texte */
+  position: relative;
+  &>span#decorationRight{
+      &:before {
+          content: "";
+          position: absolute;
+          right: 0px; /* Positionné à droite */
+          top: 6px; /* Décalé vers le bas */
+          width: 3px;
+          height: 50%;
+          transform: scaleX(1);
+          background-color: #0369a1;
+      }
+  
+      &:after {
+          content: "";
+          position: absolute;
+          right: 0px; /* Positionné à droite */
+          top: 6px; /* Décalé vers le bas */
+          height: 3px;
+          width: 25%;
+          transform: scaleX(1);
+          background-color: #0369a1;
+      }
+  }
+  &>span#decorationLeft{
+      &::before{
+          content : "";
+          position : absolute;
+          left : 0px; 
+          bottom : 6px;
+          width : 3px;
+          height : 50%;
+          transform : scaleX(1);
+          background-color: #0369a1;
+        }
+        &::after{
+          content : "";
+          position : absolute;
+          left : 0px; 
+          bottom : 6px;
+          height : 3px;
+          width : 25%;
+          transform : scaleX(1);
+          background-color: #0369a1;
+        }
+         /* Angle en haut à droite */
+
+  }
 }
-h2 {
-  font-size : 26px;
-  font-weight :600;
-}
-h3 {
-  font-size : 20px;
-  font-weight :500;
-}
-h4 {
-  font-size : 18px;
-  font-weight :400;
-}
+
 p{
   font-size : 14px;
-  font-weight: 100;
-  font-family :Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
   color : var(--font_color)
 }
+
 a {
   text-decoration: none;
   color : var(--font_color);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

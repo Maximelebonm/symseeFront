@@ -1,0 +1,61 @@
+.titleH1 {
+    display: inline-block; /* Change le comportement de la div */
+    width: auto; /* S'ajuste à son contenu */
+    padding: 10px; /* Facultatif : Ajoute un espace autour du texte */
+    position: relative;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* &>span#decorationRight{
+        &:before {
+            content: "";
+            position: absolute;
+            right: 0px; 
+            top: 6px; 
+            width: 3px;
+            height: 50%;
+            transform: scaleX(1);
+            background-color: #0369a1;
+        }
+    
+        &:after {
+            content: "";
+            position: absolute;
+            right: 0px; 
+            top: 6px; 
+            height: 3px;
+            width: 25%;
+            transform: scaleX(1);
+            background-color: #0369a1;
+        }
+    } */
+    /* &>span#decorationLeft{
+        &::before{
+            content : "";
+            position : absolute;
+            left : 0px; 
+            bottom : 8px;
+            width : 3px;
+            height : 50%;
+            background-color: #0369a1;
+          }
+          &::after{
+            content : "";
+            position : absolute;
+            left : 0px; 
+            bottom : 8px;
+            height : 3px;
+            width : 25%;
+            background-color: #0369a1;
+          }
+
+    } */
+}
+
+.carp {
+    position: absolute;
+    height : 30px;
+    width : auto;
+    opacity: 50%;
+    top : 20px;
+    right : -10px;
+    z-index: -1;
+}

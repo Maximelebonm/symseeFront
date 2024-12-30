@@ -1,6 +1,10 @@
 import './homeSlider.css';
 import { Swiper, SwiperSlide,useSwiper  } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from 'swiper/modules';
+import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+
+import rivier1 from '../../assets/photo/terrain/riviere1.jpg';
+import rivier2 from '../../assets/photo/terrain/riviere2.jpg';
+import rivier3 from '../../assets/photo/terrain/riviere3.jpg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,27 +21,29 @@ export const HomeSlider = () => {
                 coverflowEffect={{
                     slideShadows : true
                 }}
+                speed={2000}
                 autoplay={{
-                    delay: 2500,
+                    delay: 5000,
                     disableOnInteraction: false,
+
                 }}
                 loop={true}
-                navigation
-                pagination={{ clickable: true }}
+                // navigation
+                // pagination={{ clickable: true }}
                 centeredSlides={true}
                 onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
                 className="Swiper"
             >
-            <SwiperSlide>
-                <img src="https://picsum.photos/id/15/600/300"/>
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src="https://picsum.photos/id/10/600/300"/>
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src="https://picsum.photos/id/12/400/200"/>
-            </SwiperSlide>
+                <SwiperSlide>
+                    <img src={rivier1} />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={rivier2}/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={rivier3}/>
+                </SwiperSlide>
             </Swiper>
         </div>
     )
