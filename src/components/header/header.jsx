@@ -61,11 +61,16 @@ export const Header =()=>{
                         ACCEUIL 
                     </li>
                 </Link>
-                {!isMobile ?
+                <Link to='/organisation'>
+                    <li className='headerItem' onClick={activeItem}>
+                        NOS ACTIONS
+                    </li>
+                </Link>
+                {/* {!isMobile ?
                 <li className='headerItem hasSubmenu'>
-                <Link to='/about'><span className='headerItem'>À PROPOS DE NOUS<IoIosArrowDown /></span></Link>
+                <Link to='/about'><span className='headerItem'>NOS ACTIONS<IoIosArrowDown /></span></Link>
                     <ul className={`submenu`}>
-                        <Link to='/about'><li onClick={activeItem}>À PROPOS DE NOUS</li></Link>
+                        <Link to='/about'><li onClick={activeItem}>NOS ACTIONS</li></Link>
                         <Link to='/gemapi'><li onClick={activeItem}>GEMAPI</li></Link>
                     </ul>
                 </li> : 
@@ -73,15 +78,25 @@ export const Header =()=>{
                     <Link to='/about'><li onClick={activeItem} className='headerItem'>À PROPOS DE NOUS</li></Link>
                     <Link to='/gemapi'><li onClick={activeItem} className='headerItem'>GEMAPI</li></Link>
                 </>   
-             }
+             } */}
                 <Link to='/organisation'>
                     <li className='headerItem' onClick={activeItem}>
                         ORGANISATION
                     </li>
                 </Link>
+                <Link to="/commune">
+                    <li className='headerItem' onClick={activeItem}>
+                        TERRITOIRE
+                    </li>
+                </Link>
                 <Link to='/contact'>
                     <li className='headerItem' onClick={activeItem}>
                         CONTACT
+                    </li>
+                </Link>
+                <Link to="/AppelDoffre">
+                    <li className='headerItem' onClick={activeItem}>
+                        APPEL D'OFFRE
                     </li>
                 </Link>
             </ul>
