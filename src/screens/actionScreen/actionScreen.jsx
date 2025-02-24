@@ -25,7 +25,10 @@ export const ActionScreen = () => {
                             Mettre en place et entretenir des ouvrages d’hydraulique douce (haies, fascines, bandes enherbées) pour réduire l’érosion des sols et limiter les apports de sédiments.</li>
                         </ul>
                     </div>
-                    <img src={action}/>
+                    <div className="ActionImageContainer">
+                        <div className="ActionImageText">Exemple d'aménagement d'hydraulique douce pour lutter contre l'érosion des sols : Fascine de paille + plantation de haies</div>
+                        <img src={action}/>
+                    </div>
                 </div>
                 <div className='aboutUsParagrapheContainer'>
                     <div className='aboutUsParagraphe'>
@@ -34,7 +37,10 @@ export const ActionScreen = () => {
                         <h3>Stratégie :</h3>
                         <p>Une gestion réactive et de proximité, grâce à une équipe de 10 agents en régie. Cette organisation permet d’intervenir rapidement pour répondre aux besoins du territoire et garantir la continuité des actions.</p>
                     </div>
-                    <img src={strategie}/>
+                    <div className="ActionImageContainer">
+                        <div className="ActionImageText">Exemple d'intervention en rivière : retrait d'un arbre tombé.</div>
+                        <img src={strategie}/>
+                    </div>
                 </div>
                 <div className='aboutUsParagrapheContainer'>
                     <div className='aboutUsParagraphe'>
@@ -53,7 +59,10 @@ export const ActionScreen = () => {
                             </li>
                         </ul>
                     </div>
-                    <img src={gemapi}/>
+                    <div className="ActionImageContainer">
+                        <div className="ActionImageText">Exemple d'animation sur le territoire : sortie nature organisé par le conservatoire d'espaces naturels Hauts-de-France.</div>
+                        <img src={gemapi}/>
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,11 +10,20 @@ import { useState } from 'react';
 import { FaHouseFloodWater,FaCloudShowersHeavy } from "react-icons/fa6";
 import { Card_Simple_Link } from '../../components/uiElements/card/Card_Simple';
 import { GiWaterRecycling,GiWaterSplash } from "react-icons/gi";
-
-
+import { FaPhoneAlt } from "react-icons/fa";
+import { useEffect } from 'react';
 
 export const HomeScreen = () => {
     const [map, setMap] = useState(true);
+        const [isMobile, setIsMobile] = useState(false);
+    
+        useEffect(() => {
+          const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+          // Vérifie si l'appareil est mobile
+          const mobileCheck = /android|iphone|ipad|ipod|blackberry|windows phone|webos/i.test(userAgent);
+          setIsMobile(mobileCheck);
+        }, []);
 
     return (
         <div id="homeContainer">
@@ -34,6 +43,25 @@ export const HomeScreen = () => {
                 <div id="homeSliderContainer">
                     <HomeSlider id='homeSlider'/>
                 </div>
+            </section>
+            <section className="ContactHomeContainer">
+            <TitleH1 title={"APPEL D'URGENCE"} />
+            <div className='HomeContactItemContainer'>
+                <div className="contactText">
+                    Vous avez une urgence ? Coulées de boue, arbre tombé ou une inondation par débordement de la rivière.
+                </div>
+                <div className="contactText">
+                    Veuillez contacter le:
+                </div>
+                <div className="contactText">
+                    06 40 22 78 32
+                </div>
+                {
+                   isMobile ? 
+                <a href={`tel:0640227832`}  className="phoneHomeButton "><FaPhoneAlt /> Appeler</a>
+                    : null
+                }
+            </div>
             </section>
             <section id="HomeDocumentationSection">
             <TitleH1 title={'DOCUMENTATION'} />

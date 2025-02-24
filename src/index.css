@@ -18,6 +18,8 @@
   --nuance_color4 : #c2e4fa;
   --nuance_color5 : #e0f2fe;
   --nuance_color6 : #eff6ff;
+
+  --nuance_colorImg : rgba(194, 228, 250, 0.77);
   --hover_color : #004768;
   --fish_color : #0871B8;
   transition: 200ms;
@@ -35,6 +37,7 @@
 
 [data-theme='dark'] {
   --primary_color : #4d4d4d;
+  --nuance_colorImg : #535353bb;
   --header_color : #6b6b6b;
   --body_background : rgb(40, 44, 52);
   --nuance_color1 : #222222;
