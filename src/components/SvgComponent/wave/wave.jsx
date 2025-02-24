@@ -14,7 +14,7 @@ function Wave(props) {
 
   return (
     <>
-    {props.width > 0 ? <svg  width={props.width + 10} height={36} fill="none" {...props}>
+    {props.width > 0 ? <svg  width={props.width + 10} height={36} fill="" {...props}>
       <path ref={container} d={`M0 14c134-50 146 59.5 ${props.width + 10} 0v21.5H0V14z`}/>
     </svg> : null}
     </>

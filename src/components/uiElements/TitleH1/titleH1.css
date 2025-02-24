@@ -1,61 +1,45 @@
 .titleH1 {
-    display: inline-block; /* Change le comportement de la div */
-    width: auto; /* S'ajuste à son contenu */
-    padding: 10px; /* Facultatif : Ajoute un espace autour du texte */
+    display: inline-block;
     position: relative;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    /* &>span#decorationRight{
-        &:before {
-            content: "";
-            position: absolute;
-            right: 0px; 
-            top: 6px; 
-            width: 3px;
-            height: 50%;
-            transform: scaleX(1);
-            background-color: #0369a1;
-        }
-    
-        &:after {
-            content: "";
-            position: absolute;
-            right: 0px; 
-            top: 6px; 
-            height: 3px;
-            width: 25%;
-            transform: scaleX(1);
-            background-color: #0369a1;
-        }
-    } */
-    /* &>span#decorationLeft{
-        &::before{
-            content : "";
-            position : absolute;
-            left : 0px; 
-            bottom : 8px;
-            width : 3px;
-            height : 50%;
-            background-color: #0369a1;
-          }
-          &::after{
-            content : "";
-            position : absolute;
-            left : 0px; 
-            bottom : 8px;
-            height : 3px;
-            width : 25%;
-            background-color: #0369a1;
-          }
-
-    } */
-}
+    width: fit-content;
+    max-width: 100%;
+    & > h1 {
+        z-index: 2;
+        box-sizing: border-box; /* Inclut padding/border dans la largeur calculée */
+        display: inline-block;
+        margin: 0;
+        white-space: normal;
+        white-space: nowrap;
+        font-size: clamp(16px, 7vw, 60px);
+        font-family: 'inter', sans-serif;
+        font-weight: 700;
+    }
+} 
 
 .carp {
     position: absolute;
-    height : 30px;
+    height : clamp(24px, 9.5vw, 70px);
     width : auto;
-    opacity: 50%;
-    top : 20px;
-    right : -10px;
-    z-index: -1;
+    opacity: 30%;
+    top : 10px;
+    right : 0px;
+    z-index: 1;
+}
+
+#footerCarpTitle{
+    color : white;
+}
+
+@media (min-width: 780px) {
+    .titleH1 {
+        & > h1 {
+            font-size: clamp(20px, 9.5vw, 60px);
+        }
+    }
+    .carp {
+        top : 15px;
+        right : -20px;
+    }
+    
 }

@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import { Header } from './components/header/header'
 import { RoutesContainer } from './routes/routes'
-import MemoFooterFish from './components/SvgComponent/footerFish/footerFish'
+import { Footer } from './components/footer/Footer'
 
 function App() {
 
@@ -14,8 +14,8 @@ function App() {
           <RoutesContainer/>
           {/* <img src={feuillebasGauche}/> */}
         </main>
+    <Footer id="footer"/>
     </BrowserRouter>
-    <MemoFooterFish id="footer"/>
     </div>
   )
 }

@@ -1,0 +1,59 @@
+#footer{
+    margin: 0;
+    padding : 0;
+    position : relative;
+    height: 400px;
+    background-color: #063149;
+    z-index : 0;
+}
+
+#footerTitleContainer{
+    color : white;
+    margin-left: 20px;
+    margin-top: 20px;
+    z-index : 7;
+}
+#footerCopyright{
+    z-index : 7;
+    width : 100%;
+    margin : auto;
+    position: absolute;
+    bottom : 20px;
+    color: white;
+    text-align: center;
+    &>a{
+        color : white;
+    }
+}
+
+#wave{
+    position : absolute;
+    bottom : 0;
+    z-index : 5;
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#fish{
+    position : absolute;
+    z-index : 6;
+    bottom : 0;
+    right : 0;
+}
+@media (min-width : 1024px) {
+    #footer{
+        height: 650px;
+    }
+
+    #footerTitleContainer{
+        margin-left: 70px;
+        margin-top: 50px;
+        z-index : 7;
+    }
+    
+    #wave{
+        height: auto;
+    }
+}

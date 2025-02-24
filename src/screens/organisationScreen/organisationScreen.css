@@ -4,24 +4,34 @@
     color : black;
     text-align: center;
     padding : 0 10px;
+    margin-top: 50px;
+    & > h1 {
+        font-size: clamp(24px, 9.5vw, 43px);
+    }
+    & p {
+        font-size: 24px;
+        margin-top : 5px;
+        font-weight: 500;
+    }
 }
 .organisationItem{
-    margin : 10px 0;
+    margin : 50px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.organisationImgContainer{
-    width : 250px;
-    height : 250px;
-    border-radius : 50%;
-    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.151);
-    overflow: hidden;
-    &>img{
+    & img {
         width : 100%;
+        max-width : 400px;
         height : auto;
+        border-radius: 50%;
+        box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.151);
+    }
+    & h2 {
+        font-size: clamp(20px, 9.5vw, 36px);
+        margin-top : 30px;
     }
 }
+
 
 .organisationTextContainer{
     margin-top : 10px;
@@ -33,11 +43,47 @@
     font-size: 16px;
     font-weight: 700;
 }
+#elusSection{
+    background-color: var(--section_background);
+    padding : 50px 0;
+    width: 100%;
+    max-width: 700px;
+    margin : 70px auto;
+    border-radius : 15px;
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.151);
+}
+.OrganIcon{
+    color : var(--font_color3);
+    font-size : 260px;
+}
+.smallIcon{
+    color : var(--font_color3);
+    font-size : 160px;
+}
 #organisationTeam{
     margin-top : 30px;
     margin-bottom: 30px;
+    color : var(--font_color);
+    font-size: 24px;
+    &>div {
+        margin-top: 60px;
+        div{
+            margin-top: 50px;
+        }
+    }
+    & p {
+        font-size: 24px;
+    }
 }
 @media (min-width : 1024px) {
+    .organisationImgContainer{
+        width : 100%;
+        max-width: 350px;  
+        &>img{
+            width : 100%;
+            height : auto;
+        }
+    }
     .organisationVicePres{
         display: flex;
         justify-content: center;

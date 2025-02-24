@@ -1,0 +1,467 @@
+[
+    {
+        "commune": "CA du Caudrésis et catésis",
+        "cc": "CA2C",
+        "delegue": "Bertrand LEFEBVRE",
+        "suppleant": "Monique LESNE SETIAUX"
+    },
+    {
+        "commune": "BAZUEL",
+        "cc": "CA2C",
+        "delegue": "Jean Félix MACAREZ",
+        "suppleant": "Édouard PINECKI"
+    },
+    {
+        "commune": "BRIASTRE",
+        "cc": "CA2C",
+        "delegue": "Romain PLUVINAGE",
+        "suppleant": "Martine LANGLET"
+    },
+    {
+        "commune": "BUSIGNY",
+        "cc": "CA2C",
+        "delegue": "Nicole GOURMEZ",
+        "suppleant": "René SCAILTEUX"
+    },
+    {
+        "commune": "CATILLON/SAMBRE",
+        "cc": "CA2C",
+        "delegue": "Brigitte LEDUC",
+        "suppleant": "Cécile HENRIET"
+    },
+    {
+        "commune": "HONNECHY",
+        "cc": "CA2C",
+        "delegue": "Josiane CANION",
+        "suppleant": "Ludovic MEURANT"
+    },
+    {
+        "commune": "INCHY EN CAMBRÉSIS",
+        "cc": "CA2C",
+        "delegue": "Jean Luc WATREMEZ",
+        "suppleant": "Antoine DUCHESNE"
+    },
+    {
+        "commune": "LE CATEAU",
+        "cc": "CA2C",
+        "delegue": "Bruno MANNEL",
+        "suppleant": "Guy DRUESNES"
+    },
+    {
+        "commune": "LE POMMEREUIL",
+        "cc": "CA2C",
+        "delegue": "Pascal PAQUET",
+        "suppleant": "Bernadette LEGER"
+    },
+    {
+        "commune": "MAZINGHIEN",
+        "cc": "CA2C",
+        "delegue": "Michel HENNEQUART",
+        "suppleant": "Grégory DIEU"
+    },
+    {
+        "commune": "MONTAY",
+        "cc": "CA2C",
+        "delegue": "Sophie CLAISSE",
+        "suppleant": "Cathy DELPORTE"
+    },
+    {
+        "commune": "NEUVILLY",
+        "cc": "CA2C",
+        "delegue": "Ludovic HAVART",
+        "suppleant": "Corinne MONIEZ"
+    },
+    {
+        "commune": "ORS",
+        "cc": "CA2C",
+        "delegue": "Bruno VILLAIN",
+        "suppleant": "Gérard DELVA"
+    },
+    {
+        "commune": "REUMONT",
+        "cc": "CA2C",
+        "delegue": "Jean-Pierre CARRE",
+        "suppleant": "Jean-Luc LALAUT"
+    },
+    {
+        "commune": "SAINT AUBERT",
+        "cc": "CA2C",
+        "delegue": "Albert DESTIENNE",
+        "suppleant": "David CAPILE"
+    },
+    {
+        "commune": "SAINT BENIN",
+        "cc": "CA2C",
+        "delegue": "Véronique NICAISE",
+        "suppleant": "Roger TIERCE"
+    },
+    {
+        "commune": "SAINT-SOUPLET",
+        "cc": "CA2C",
+        "delegue": "Henri QUONIOU",
+        "suppleant": "David VANDENBERGH"
+    },
+    {
+        "commune": "SAINT VAAST EN CIS",
+        "cc": "CA2C",
+        "delegue": "Yann BARELLE",
+        "suppleant": "Sophie LEDUC"
+    },
+    {
+        "commune": "CC Pays Solesmois",
+        "cc": "CCPS",
+        "delegue": "Michel DHANEUS",
+        "suppleant": "Jean Marc LEMEITER"
+    },
+    {
+        "commune": "BEAURAIN",
+        "cc": "CCPS",
+        "delegue": "Denis SEMAILLE",
+        "suppleant": "Benoit LECLERCQ"
+    },    {
+        "commune": "BERMERAIN",
+        "cc": "CCPS",
+        "delegue": "Yvan BRUNIAU",
+        "suppleant": "Daniel DUWEZ"
+    },
+    {
+        "commune": "CAPELLE SUR ÉCAILLON",
+        "cc": "CCPS",
+        "delegue": "Anne Sophie DECAUDIN",
+        "suppleant": "Pascal STIEVENARD"
+    },
+    {
+        "commune": "ESCARMAIN",
+        "cc": "CCPS",
+        "delegue": "Didier ESCARTIN",
+        "suppleant": "Madleen DEPARIS"
+    },
+    {
+        "commune": "HAUSSY",
+        "cc": "CCPS",
+        "delegue": "Hélène LEVREZ THERON",
+        "suppleant": "Henri BUISSET"
+    },
+    {
+        "commune": "MONTRECOURT",
+        "cc": "CCPS",
+        "delegue": "Albert DEVIGNE",
+        "suppleant": "Pascal GOBERT"
+    },
+    {
+        "commune": "ROMERIES",
+        "cc": "CCPS",
+        "delegue": "Xavier DUPONT",
+        "suppleant": "Louisette ALLART"
+    },
+    {
+        "commune": "SAINT MARTIN/ÉCAILLON",
+        "cc": "CCPS",
+        "delegue": "Serge BLICQ",
+        "suppleant": "Henri POTTIEZ"
+    },
+    {
+        "commune": "SAINT-PYTHON",
+        "cc": "CCPS",
+        "delegue": "Georges FLAMENGT",
+        "suppleant": "Philippe LAUDE"
+    },
+    {
+        "commune": "SAULZOIR",
+        "cc": "CCPS",
+        "delegue": "Élie MONIER",
+        "suppleant": "Gilbert XHAUFLAIR"
+    },
+    {
+        "commune": "SOLESMES",
+        "cc": "CCPS",
+        "delegue": "Fernand KIK",
+        "suppleant": "Nicolas CAPPELIEZ"
+    },
+    {
+        "commune": "SOMMAING/ÉCAILLON",
+        "cc": "CCPS",
+        "delegue": "Roland SALENGRO",
+        "suppleant": "Dominique BERTON"
+    },
+    {
+        "commune": "VENDEGIES/ÉCAILLON",
+        "cc": "CCPS",
+        "delegue": "Jacques DOMAS",
+        "suppleant": "Cédric DERET"
+    },
+    {
+        "commune": "VERTAIN",
+        "cc": "CCPS",
+        "delegue": "Jacky CALZADA",
+        "suppleant": "Luc DELCOURT"
+    },
+    {
+        "commune": "VIESLY",
+        "cc": "CCPS",
+        "delegue": "Pascal SANTERRE",
+        "suppleant": "Cindy WANECQUE"
+    },
+    {
+        "commune": "CA Porte du Hainaut",
+        "cc": "CAPH",
+        "delegue": "Dominique SAVARY",
+        "suppleant": "Yves TONNEAU"
+    },
+    {
+        "commune": "ABSON",
+        "cc": "CAPH",
+        "delegue": "Jean Michel FOURMAUX",
+        "suppleant": "Jean Marc TRZAN"
+    },
+    {
+        "commune": "AVESNES LE SEC",
+        "cc": "CAPH",
+        "delegue": "Dominique CARPENTIER",
+        "suppleant": "Jean Marie RAMETTE"
+    },
+    {
+        "commune": "BOUCHAIN",
+        "cc": "CAPH",
+        "delegue": "Any BROWERS",
+        "suppleant": "Jean Pierre VERLET"
+    },
+    {
+        "commune": "DENAIN",
+        "cc": "CAPH",
+        "delegue": "Solange LEMOINE",
+        "suppleant": "Thomas SANCHEZ"
+    },
+    {
+        "commune": "DOUCHY-LES-MINES",
+        "cc": "CAPH",
+        "delegue": "Michel VENIAT",
+        "suppleant": "Romain MERVILLE"
+    },{
+        "commune": "HASPRES",
+        "cc": "CAPH",
+        "delegue": "Jean-François DELATTRE",
+        "suppleant": "Jean Luc REGNIER"
+    },
+    {
+        "commune": "ESCAUDAIN",
+        "cc": "CAPH",
+        "delegue": "Michel SION",
+        "suppleant": "Olivier ABDELOUAHED"
+    },
+    {
+        "commune": "HAULCHIN",
+        "cc": "CAPH",
+        "delegue": "Vincent CHARLET",
+        "suppleant": "Alain BONNAFOUS"
+    },
+    {
+        "commune": "HÉRIN",
+        "cc": "CAPH",
+        "delegue": "Murielle SCHERER",
+        "suppleant": "Daniel BOITTIAUX"
+    },
+    {
+        "commune": "HORDAIN",
+        "cc": "CAPH",
+        "delegue": "Corine SAUVAGE",
+        "suppleant": "Arnaud BAVAY"
+    },
+    {
+        "commune": "LA SENTINELLE",
+        "cc": "CAPH",
+        "delegue": "Francky PETIT",
+        "suppleant": "Jérémy GABET"
+    },
+    {
+        "commune": "LIEU SAINT AMAND",
+        "cc": "CAPH",
+        "delegue": "Stéphane MER",
+        "suppleant": "Jean Michel DENHEZ"
+    },
+    {
+        "commune": "LOURCHES",
+        "cc": "CAPH",
+        "delegue": "Roberto FOGAL",
+        "suppleant": "Pascal CARTIERRE"
+    },
+    {
+        "commune": "MARQUETTE EN OSTREVANT",
+        "cc": "CAPH",
+        "delegue": "Jean Marie TONDEUR",
+        "suppleant": "Jean Maurice MARECHAL"
+    },
+    {
+        "commune": "MASTAING",
+        "cc": "CAPH",
+        "delegue": "Christophe HUART",
+        "suppleant": "Ludovic AIGUIER"
+    },
+    {
+        "commune": "NEUVILLE SUR ESCAUT",
+        "cc": "CAPH",
+        "delegue": "En attente",
+        "suppleant": "Pascal SOLEIL"
+    },
+    {
+        "commune": "NOYELLES-SUR-SELLE",
+        "cc": "CAPH",
+        "delegue": "Séverine MORAGE",
+        "suppleant": "René DREUMONT"
+    },
+    {
+        "commune": "OISY",
+        "cc": "CAPH",
+        "delegue": "Jean Pierre PIRAUT",
+        "suppleant": "Serge LECLERC"
+    },
+    {
+        "commune": "ROEULX",
+        "cc": "CAPH",
+        "delegue": "Thierry LEFEBVRE",
+        "suppleant": "Jean SIMON"
+    },
+    {
+        "commune": "THIANT",
+        "cc": "CAPH",
+        "delegue": "Marc WATTIEZ",
+        "suppleant": "Philippe WAELKENS"
+    },
+    {
+        "commune": "TRITH SAINT LEGER",
+        "cc": "CAPH",
+        "delegue": "Thibaut DRUBAY",
+        "suppleant": "Jean Paul DUBOIS"
+    },
+    {
+        "commune": "WASNES AU BAC",
+        "cc": "CAPH",
+        "delegue": "Sylvain RICHÉ",
+        "suppleant": "Laurence CORNET"
+    },
+    {
+        "commune": "WAVRECHAIN SOUS DENAIN",
+        "cc": "CAPH",
+        "delegue": "Alain PROUVEUR",
+        "suppleant": "Jacques DELCROIX"
+    },
+    {
+        "commune": "WAVRECHAIN SOUS FAULX",
+        "cc": "CAPH",
+        "delegue": "André LEPRETRE",
+        "suppleant": "Guy HECQUET"
+    },
+    {
+        "commune": "CA Valenciennes Métropole",
+        "cc": "CAVM",
+        "delegue": "Hervé BROUILLARD",
+        "suppleant": "Bernard DEMEYER"
+    },{
+        "commune": "MONCHAUX/ÉCAILLON",
+        "cc": "CAVM",
+        "delegue": "Jean-Maurice METAYER",
+        "suppleant": "Éric HENNION"
+    },
+    {
+        "commune": "VERCHAIN MAUGRÉ",
+        "cc": "CAVM",
+        "delegue": "Thomas SOREAU",
+        "suppleant": "Christian BISIAUX"
+    },
+    {
+        "commune": "CC Thiérache Sambre et Oise",
+        "cc": "CCTSO",
+        "delegue": "Jean Louis DUFRENNE",
+        "suppleant": "Yves DUMUR"
+    },
+    {
+        "commune": "ETREUX",
+        "cc": "CCTSO",
+        "delegue": "Patrick DUMON",
+        "suppleant": "Christine WATREMEZ"
+    },
+    {
+        "commune": "HANNAPES",
+        "cc": "CCTSO",
+        "delegue": "Christian BRUNET",
+        "suppleant": "Olivier HENNECHART"
+    },
+    {
+        "commune": "HAUTEVILLE",
+        "cc": "CCTSO",
+        "delegue": "Willy HUYGHE",
+        "suppleant": "Hervé FLAMANT"
+    },
+    {
+        "commune": "LA VALLÉE MULATRE",
+        "cc": "CCTSO",
+        "delegue": "Jean-Pierre DEGARDEZ",
+        "suppleant": "Bouchra DUMANGE"
+    },
+    {
+        "commune": "MENNEVRET",
+        "cc": "CCTSO",
+        "delegue": "Philippe ROISIN",
+        "suppleant": "Marc RATTE"
+    },
+    {
+        "commune": "RIBEAUVILLE",
+        "cc": "CCTSO",
+        "delegue": "Maurice COQUART",
+        "suppleant": "Olivier MAHIEUX"
+    },
+    {
+        "commune": "SAINT MARTIN RIVIERE",
+        "cc": "CCTSO",
+        "delegue": "Étienne PLATEAU",
+        "suppleant": "Caroline LOMBARD"
+    },
+    {
+        "commune": "TUPIGNY",
+        "cc": "CCTSO",
+        "delegue": "Jean-Luc EGRET",
+        "suppleant": "Patrick MARIAGE"
+    },
+    {
+        "commune": "VAUX ANDIGNY",
+        "cc": "CCTSO",
+        "delegue": "Michel GENDRE",
+        "suppleant": "Bernadette THIEULEUX"
+    },
+    {
+        "commune": "VÉNÉROLLES",
+        "cc": "CCTSO",
+        "delegue": "Patrick DELAMOUR",
+        "suppleant": "Franck LEPOUSEZ"
+    },
+    {
+        "commune": "CC Pays de Mormal",
+        "cc": "CCPM",
+        "delegue": "Danièle DRUESNES",
+        "suppleant": "Philippe SARRAUTE"
+    },
+    {
+        "commune": "BOUSIES",
+        "cc": "CCPM",
+        "delegue": "André DUCARNE",
+        "suppleant": "Monique BRICOUT"
+    },
+    {
+        "commune": "CROIX CALUYAU",
+        "cc": "CCPM",
+        "delegue": "Jean Marie COUSIN",
+        "suppleant": "Christophe RENARD"
+    },
+    {
+        "commune": "FONTAINE AU BOIS",
+        "cc": "CCPM",
+        "delegue": "Hélène DUMORTIER",
+        "suppleant": "Corinne MOREAU"
+    },
+    {
+        "commune": "FOREST EN CAMBRÉSIS",
+        "cc": "CCPM",
+        "delegue": "Georges BROXER",
+        "suppleant": "Marie Pierre SORIAUX"
+    }
+]

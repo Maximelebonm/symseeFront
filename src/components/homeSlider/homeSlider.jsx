@@ -31,7 +31,7 @@ export const HomeSlider = () => {
                 // navigation
                 // pagination={{ clickable: true }}
                 centeredSlides={true}
-                onSlideChange={() => console.log('slide change')}
+                // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
                 className="Swiper"
             >

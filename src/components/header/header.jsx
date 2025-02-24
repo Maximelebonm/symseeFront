@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MemoLogoHeader from '../SvgComponent/logoheader/logoHeader';
 import { ToggleSwitch } from '../uiElements/toggleSwitch/toggleSwitch';
-import { IoIosArrowDown } from "react-icons/io";
-
 
 export const Header =()=>{
     const [isActive, setIsActive] = useState(false);
@@ -14,8 +12,6 @@ export const Header =()=>{
     const toggleActive = () => {
         setIsActive(!isActive);
     }
-
-
 
     useEffect(()=>{
                 const nav = document.querySelectorAll('#headerNav .headerItem');
@@ -36,7 +32,7 @@ export const Header =()=>{
         }   else{
             setIsMobile(false)
         }
-      });
+    });
     const activeItem = () => {
         const clickedItem = window.innerWidth;
         if(clickedItem <= 760){
@@ -58,10 +54,10 @@ export const Header =()=>{
             <ul id='headerNav' onClick={activeItem}>
                 <Link to='/'>
                     <li className='headerItem' onClick={activeItem}>
-                        ACCEUIL 
+                        ACCUEIL 
                     </li>
                 </Link>
-                <Link to='/organisation'>
+                <Link to='/actions'>
                     <li className='headerItem' onClick={activeItem}>
                         NOS ACTIONS
                     </li>
@@ -84,7 +80,7 @@ export const Header =()=>{
                         ORGANISATION
                     </li>
                 </Link>
-                <Link to="/commune">
+                <Link to="/communes">
                     <li className='headerItem' onClick={activeItem}>
                         TERRITOIRE
                     </li>
@@ -94,9 +90,14 @@ export const Header =()=>{
                         CONTACT
                     </li>
                 </Link>
-                <Link to="/AppelDoffre">
+                <Link to="/appeldoffres">
                     <li className='headerItem' onClick={activeItem}>
                         APPEL D'OFFRE
+                    </li>
+                </Link>
+                <Link to="/documents">
+                    <li className='headerItem' onClick={activeItem}>
+                        DOCUMENTS
                     </li>
                 </Link>
             </ul>

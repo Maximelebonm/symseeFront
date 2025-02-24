@@ -1,17 +1,13 @@
 import {Route, Routes} from 'react-router-dom';
-// import { PrivateRoutes } from './privatesRoutes';
 import { HomeScreen } from '../screens/homeScreen/homeScreen';
 import { ContactScreen } from '../screens/contactscreen/contactScreen';
-import { AboutUsScreen } from '../screens/aboutUsScreen/aboutUsScreen';
-import { ActuScreen } from '../screens/actuScreen/actuScreen';
-import { ArticleScreen } from '../screens/articleScreen/articleScreen';
-// import {LoginScreen} from '../screens/loginScreen/loginScreen'
-// import { HomePanelScreen } from '../screens/panelScreens/homePanelScreen/homePanelScreen';
-// import { CreateArticleScreen } from '../screens/panelScreens/createArticleScreen/createArticleScreen';
-// import { ListeArticleScreen } from '../screens/panelScreens/listArcticleScreen/listeArticleScreen';
-// import { UpdateArticleScreen } from '../screens/panelScreens/updateArticleScreen/updateArticleScreen';
 import { OrganisationScreen } from '../screens/organisationScreen/organisationScreen';
-import { GemapiScreen } from '../screens/gemapiScreen/gemapiScreen';
+import { ActionScreen } from '../screens/actionScreen/actionScreen';
+import { FieldScreen } from '../screens/fieldScreen/fieldScreen';
+import { DocumentsScreen } from '../screens/documentsScreen/DocumentsScreen';
+import { AppelDoffreScreen } from '../screens/appelDoffreScreen/AppelDoffreScreen.jsx';
+import { ConfidentialistyScreen } from '../screens/confidentialityScreen/ConfidentialityScreen.jsx';
+
 
 export const RoutesContainer = () =>{
     return (
@@ -39,12 +35,16 @@ export const RoutesContainer = () =>{
 
             {/* Mes routes public */}
             <Route path='/' element={<HomeScreen/>}/>
-            <Route path='/about' element={<AboutUsScreen/>}/>
+        
             {/* <Route path='/actualites' element={<ActuScreen/>}/> */}
             <Route path='/contact' element={<ContactScreen/>}/>
             {/* <Route path='/article/:id' element={<ArticleScreen/>}/> */}
             <Route path='/organisation' element={<OrganisationScreen/>} />
-            <Route path='/gemapi' element={<GemapiScreen/>}/>
+            <Route path='/actions' element={<ActionScreen/>}/>
+            <Route path='/communes' element={<FieldScreen/>}/>
+            <Route path='/documents' element={<DocumentsScreen/>}/>
+            <Route path='/appeldoffres' element={<AppelDoffreScreen/>} />
+            <Route path='/confidentiality' element={<ConfidentialistyScreen/>} />
             {/* <Route path='/admin/login' element={<LoginScreen/>}/> */}
         </Routes>
         

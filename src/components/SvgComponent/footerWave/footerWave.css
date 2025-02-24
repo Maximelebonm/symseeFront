@@ -1,0 +1,17 @@
+
+.vague {
+    transition : 200ms;
+    height : 350px;
+    width : 100%;
+}
+
+@media (min-width : 1024px) {
+    .vague-svg{
+        max-height : 150px;
+        width : 100%;
+    }
+    .vague {
+        transition : 200ms;
+        width : 100%;
+    }
+}

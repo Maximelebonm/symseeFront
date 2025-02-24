@@ -1,3 +1,7 @@
-#carpeFull>path{
+.carpeFull>path{
     fill : var(--fish_color);
+}
+
+#footerCarpSvg>path{
+    fill: white;
 }

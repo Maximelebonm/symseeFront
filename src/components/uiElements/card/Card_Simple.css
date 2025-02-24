@@ -1,0 +1,43 @@
+#CardSimpleContainer{
+    width : 100%;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    padding : 10px;
+    border-radius : 15px;
+    text-align: center;
+    background-color: var(--nuance_color4);
+    transition : 300ms;
+    &:hover{
+        cursor: pointer;
+        background-color: var(--hover_color);
+        color : white !important;
+    }
+    >h3{
+        font-size: clamp(16px, 9.5vw, 23px);
+    }
+}
+
+#CardSimpleContainer:hover {
+    cursor: pointer;
+    background-color: var(--hover_color);
+    color: white; /* Applique le changement de couleur */
+}
+
+#CardSimpleContainer h3 {
+    height: 50px;
+    transition: color 300ms;
+}
+
+#CardSimpleContainer:hover h3{
+    transition : 300ms;
+    color: white;
+}
+
+#CardSimpleContainer:hover div{
+    transition : 300ms;
+    color: white;
+}
+
+#CardSimpleIcon{
+    color : var(--title_color);
+    font-size : 80px;
+}

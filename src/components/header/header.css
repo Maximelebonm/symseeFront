@@ -2,14 +2,15 @@
 
 #headerContainer {
     display : flex;
-    max-width: 1720px;
+    max-width: 1920px;
+    font-family: "Quicksand", serif;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight :700;
+    font-size: 20px;
     padding : 0px 0px;
-    height : 80px;
+    height : 120px;
     color : var(--font_color);
     position : fixed;
     top : 0;
@@ -34,42 +35,47 @@
 .headerItem {
     display : flex;
     align-items: center;
-    height: 50px;
+    height: 70px;
     padding : 0px 10px;
     cursor : pointer;
     color : var(--link_color);
     position : relative;
+    transition : 200ms;
+    overflow: hidden;
         &:hover{
-            color : var(--nuance_color3)
+            color : var(--header_color);
+            /* background-color : var(--nuance_color6); */
+          
         }
         &::before{
             content : "";
             position : absolute;
-            background-color: #0871b8;
+            background-color: var(--header_color);
             width : 100%;
-            height : 3px;
+            height : 5px;
             left : 0px;
             bottom : 0px;
             transform-origin: 100% 0;
             transform : scaleX(0);
             transition : transform 0.4s;
+            
         }
         &:hover::before {
             transform-origin: 100% 0;
             transform: scaleX(1);
-            background-color: var(--nuance_color3)
+            background-color: var(--header_color);
         }
         &.active::before {
             transform-origin: 0 0;
             transform: scaleX(1);
-            background-color: var(--nuance_color3)
+            background-color: var(--header_color);
         }
         &::after{
             content : "";
             position : absolute;
-            background-color: #0871b8;
+            background-color: var(--header_color);
             width : 100%;
-            height : 3px;
+            height : 5px;
             left : 0px;
             top : 0px;
             transform-origin: 0% 0%;
@@ -77,27 +83,30 @@
             transition : transform 0.4s;
         }
         &:hover::after {
+            
             transform-origin: 0 100%;
             transform: scaleY(1);
+            background-color: var(--header_color);
         }
         &.active::after {
             transform-origin: 0 100%;
             transform: scaleY(1);
         }
         &:active {
-            color : #2d96db;
+            color : var(--header_color);
             transition : 0s;
             &::before{
-                background-color:#2d96db;
+                background-color: var(--header_color);
             }
         }
+  
 
 }
 
 #prefix__logoSymsee{
     width :auto;
     padding : 0px 0px 0px 10px;
-    height : 80px;
+    height : 100px;
 }
 
 #icons{
@@ -142,8 +151,22 @@
   .submenu.open {
     display: block;
   }
+@media(max-width : 1050px){
+    .headerItem {
+        padding : 0px 0px;
+        margin : 5px 5px;
+        font-size: 0.9rem;
+    }
+}
+@media(max-width : 950px){
+    .headerItem {
+        padding : 0px 0px;
+        margin : 5px 5px;
+        font-size: 0.8rem;
+    }
+}
 
-@media (max-width : 760px){
+@media (max-width : 780px){
     #icons {
         display : block;
         width : 40px;
@@ -181,6 +204,7 @@
         margin : 5px 5px;
         font-size: medium;
         text-align : center;
+        
         justify-content: center;
         color: white;
         &::before{
@@ -190,7 +214,8 @@
             height : 0px;
         }
          &:hover{
-             background-color: #186ca3;
+            background-color: #186ca3;
+            color : white;
         }
         &.active{
             background-color: #11496e;

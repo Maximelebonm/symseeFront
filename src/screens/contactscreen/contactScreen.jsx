@@ -1,6 +1,7 @@
 import './contactScreen.css';
 import { FaPhoneAlt,FaEnvelope  } from "react-icons/fa";
 import { useEffect,useState } from 'react';
+import { TitleH1 } from '../../components/uiElements/TitleH1/TitleH1';
 
 
 export const ContactScreen =()=> {
@@ -16,7 +17,8 @@ export const ContactScreen =()=> {
     
     return (
         <div id='constactScreenContainer'>
-            <h1>CONTACT</h1>
+        
+            <TitleH1 title={'CONTACT'}/>
             <div className='ContactItemContainer'>
                 <p>
                     Syndicat Mixte du Sud Est de l’Escaut
@@ -41,13 +43,16 @@ export const ContactScreen =()=> {
                         : null
                     }
                 </div>
-            <h2>POUR TOUTES URGENCES</h2>
+                <div className='ContactItemContainer'>
+
+                <TitleH1 title={'POUR TOUTES URGENCES'}/>
+                </div>
             <div className='ContactItemContainer'>
+                <h3>
+                    M. Sébastien DELSART, chef d&apos;équipe
+                </h3>
                 <p>
-                    M.Sebastien DELSART
-                </p>
-                <p>
-                    Telephone : 06.40.22.78.32
+                    Téléphone : 06 40 22 78 32
                 </p>
                 {
                    isMobile ? 
@@ -56,11 +61,25 @@ export const ContactScreen =()=> {
                 }
             </div>
             <div className='ContactItemContainer'>
+            <h3>
+                M. Raphaël DELCROIX, animateur érosion
+            </h3>
             <p>
-                M.Michaël MEUNIER
+                Téléphone : 07 86 70 36 89
             </p>
+                {
+                   isMobile  ? 
+                <a href={`tel:0786703689`}  className="phoneButton"><FaPhoneAlt /> Appeler</a>
+                    : null
+                }
+            </div>
+            <div className='ContactItemContainer'>
+            <h3>
+                {/* M. Michaël MEUNIER,  */}
+                Animateur rivière
+            </h3>
             <p>
-                Telephone : 06.30.53.32.84
+                Téléphone : 06 30 53 32 84
             </p>
                 {
                    isMobile  ? 

@@ -1,0 +1,27 @@
+.fieldContainer{
+    margin-bottom: 20px;
+    color : var(--font_color);
+    width : 100%;
+}
+.iframeMap{
+    height : 600px;
+}
+#listElu{
+    display :flex;
+    margin : auto;
+    justify-content: center;
+}
+.rowTab0{
+    background-color: var(--nuance_color5);
+ 
+}
+table {
+    max-width : 100%;
+}
+tbody {
+    max-width : 100%;
+}
+td{
+    word-wrap: break-word;
+    font-size: 0.9rem;
+}
