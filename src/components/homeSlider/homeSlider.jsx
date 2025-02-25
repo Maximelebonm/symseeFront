@@ -15,26 +15,20 @@ export const HomeSlider = () => {
     return (
         <div id="homSliderContainer">
             <Swiper
-                modules={[Navigation, Pagination,Autoplay]}
-                spaceBetween={0}
-                slidesPerView={1}
-                coverflowEffect={{
-                    slideShadows : true
-                }}
-                speed={2000}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
+        spaceBetween={0}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
 
-                }}
-                loop={true}
-                // navigation
-                // pagination={{ clickable: true }}
-                centeredSlides={true}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={(swiper) => console.log(swiper)}
-                className="Swiper"
-            >
+  
+        modules={[Autoplay, Pagination, Navigation]}
+        className="Swiper"
+      >
                 <SwiperSlide>
                     <img src={rivier1} />
                 </SwiperSlide>

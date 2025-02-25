@@ -110,23 +110,29 @@
 }
 .contactText{
     font-size : 20px;
+    margin-top: 20px;
     text-align: center;
     font-family: 'quickSand', sans-serif;
+    color: var(--font_color);
 }
 .phoneHomeButton{
     background-color: red;
     color : var(--font_color2);
-    position : relative;
-    margin : 10px 0px;
+    font-family: 'quickSand', sans-serif;
+    display: block;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 20px; 
     border-radius : 20px;
     width : 100%;
     max-width : 300px;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     padding : 10px;
     text-align: center;
-    font-family: 'quickSand', sans-serif;
+  
 }
+
 .homeParagraphe{
     font-size: 16px;
     margin-top : 20px;
@@ -190,11 +196,10 @@
         width :100%;
         flex-direction: column;
     }
-    #homeCarteSection{
+    #homeCarteSection {
         display: flex;
         flex-direction: row;
     }
-
     #homeMap{
         position: relative;
         width: 100%;
@@ -206,8 +211,7 @@
     }
     .ContactHomeContainer{
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column;      
         align-items: center;
         padding-top : 50px;
         padding-bottom: 50px;

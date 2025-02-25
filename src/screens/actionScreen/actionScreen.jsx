@@ -26,7 +26,7 @@ export const ActionScreen = () => {
                         </ul>
                     </div>
                     <div className="ActionImageContainer">
-                        <div className="ActionImageText">Exemple d'aménagement d'hydraulique douce pour lutter contre l'érosion des sols : Fascine de paille + plantation de haies</div>
+                        <div className="ActionImageText">Exemple d&apos;aménagement d&apos;hydraulique douce pour lutter contre l&apos;érosion des sols : Fascine de paille + plantation de haies</div>
                         <img src={action}/>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ export const ActionScreen = () => {
                         <p>Une gestion réactive et de proximité, grâce à une équipe de 10 agents en régie. Cette organisation permet d’intervenir rapidement pour répondre aux besoins du territoire et garantir la continuité des actions.</p>
                     </div>
                     <div className="ActionImageContainer">
-                        <div className="ActionImageText">Exemple d'intervention en rivière : retrait d'un arbre tombé.</div>
+                        <div className="ActionImageText">Exemple d&apos;intervention en rivière : retrait d&apos;un arbre tombé.</div>
                         <img src={strategie}/>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export const ActionScreen = () => {
                         </ul>
                     </div>
                     <div className="ActionImageContainer">
-                        <div className="ActionImageText">Exemple d'animation sur le territoire : sortie nature organisé par le conservatoire d'espaces naturels Hauts-de-France.</div>
+                        <div className="ActionImageText">Exemple d&apos;animation sur le territoire : sortie nature organisé par le conservatoire d&apos;espaces naturels Hauts-de-France.</div>
                         <img src={gemapi}/>
                     </div>
                 </div>

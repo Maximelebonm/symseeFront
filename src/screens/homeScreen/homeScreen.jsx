@@ -1,7 +1,6 @@
 
 import './homeScreen.css';
 import { HomeSlider } from '../../components/homeSlider/homeSlider';
-import { DefaultButton } from '../../components/uiElements/defaultButton/defaultButton';
 import { Link } from 'react-router-dom';
 import { TitleH1 } from '../../components/uiElements/TitleH1/TitleH1';
 import bassin_verssant from  '../../assets/cartes/Bassin_versant.png';
@@ -50,16 +49,13 @@ export const HomeScreen = () => {
                 <div className="contactText">
                     Vous avez une urgence ? Coulées de boue, arbre tombé ou une inondation par débordement de la rivière.
                 </div>
-                <div className="contactText">
-                    Veuillez contacter le:
-                </div>
-                <div className="contactText">
+                <div className="contactText" id="contactUrgence">
+                    Veuillez contacter le :<br/>
                     06 40 22 78 32
                 </div>
                 {
-                   isMobile ? 
+                   isMobile &&
                 <a href={`tel:0640227832`}  className="phoneHomeButton "><FaPhoneAlt /> Appeler</a>
-                    : null
                 }
             </div>
             </section>

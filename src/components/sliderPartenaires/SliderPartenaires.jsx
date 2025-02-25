@@ -31,7 +31,6 @@ const images = [
   export const SliderPartenaires = ()=> {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [mobile, setMobile] = useState(window.innerWidth < 1024);
-    console.log(mobile)
 
   // Auto-slide effect
   useEffect(() => {
@@ -44,7 +43,6 @@ const images = [
       return () => clearInterval(interval);
     }
   }, [mobile]);
-
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>

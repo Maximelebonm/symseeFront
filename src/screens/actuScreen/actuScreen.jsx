@@ -4,44 +4,7 @@ import { HomeSlider } from '../../components/homeSlider/homeSlider';
 
 export const ActuScreen = () => {
     
-    const tabArticles = [
-        {
-        title : 'title',
-        subtittle : 'subtitle',
-        lines : [
-            {
-                titleLine : 'titleLine1',
-                pictureLine : 'https://picsum.photos/id/15/300/300',
-                subtitileLine : 'subtitleLine1',
-                paraLine : 'paraline1'
-            },
-            {
-                titleLine : 'titleLine2',
-                pictureLine : 'https://picsum.photos/id/16/300/300',
-                subtitileLine : 'subtitleLine2',
-                paraLine : 'paraline2'
-            }
-        ]
-        },
-        {
-            title : 'title',
-            subtittle : 'subtitle',
-            lines : [
-                {
-                    titleLine : 'titleLine1',
-                    pictureLine : 'https://picsum.photos/id/15/300/300',
-                    subtitileLine : 'subtitleLine1',
-                    paraLine : 'paraline1'
-                },
-                {
-                    titleLine : 'titleLine2',
-                    pictureLine : 'https://picsum.photos/id/16/300/300',
-                    subtitileLine : 'subtitleLine2',
-                    paraLine : 'paraline2'
-                }
-            ]
-            }
-    ]
+   
     return (
         <div id='actuScreenContainer'>
         <HomeSlider/>

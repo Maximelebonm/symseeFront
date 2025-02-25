@@ -1,5 +1,5 @@
 import './contactScreen.css';
-import { FaPhoneAlt,FaEnvelope  } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import { useEffect,useState } from 'react';
 import { TitleH1 } from '../../components/uiElements/TitleH1/TitleH1';
 
