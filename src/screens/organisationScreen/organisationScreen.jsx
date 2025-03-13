@@ -83,7 +83,7 @@ export const OrganisationScreen = ()=>{
                 <div>
                     <FaUserTie className='smallIcon'/>
                     <p>
-                    Un animateur rivière
+                    Une animatrice rivière
                     </p>
                 </div>
                 <div>

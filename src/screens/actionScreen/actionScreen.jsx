@@ -12,7 +12,7 @@ export const ActionScreen = () => {
         <div id="aboutUsScreenContainer">
             <div className='aboutUsScreenItem'>
                 <TitleH1 title={'NOS ACTIONS'} />
-                <h2>Protéger l&apos;eau, la biodiversité et les térritoires avec la GEMAPI</h2>
+                <h2>Protéger l&apos;eau, la biodiversité et les territoires avec la GEMAPI</h2>
                 <div className='aboutUsParagrapheContainer'>
                     <div className='aboutUsParagraphe'>
                     <TbHomeShield className='IconAction'/>
@@ -22,7 +22,7 @@ export const ActionScreen = () => {
                         <ul>
                             <li><strong>Entretien et restauration des cours d’eau : </strong>Assurer un bon état écologique et prévenir les risques liés aux crues.</li>
                             <li><strong>Lutte contre les coulées de boue : </strong>
-                            Mettre en place et entretenir des ouvrages d’hydraulique douce (haies, fascines, bandes enherbées) pour réduire l’érosion des sols et limiter les apports de sédiments.</li>
+                            Mettre en place et entretenir des ouvrages d’hydraulique douce (haies, fascines, bandes enherbées) pour réduire l’érosion des sols et limiter les apports de sédiments dans les rivières.</li>
                         </ul>
                     </div>
                     <div className="ActionImageContainer">
@@ -45,7 +45,7 @@ export const ActionScreen = () => {
                 <div className='aboutUsParagrapheContainer'>
                     <div className='aboutUsParagraphe'>
                     <FaHandHoldingWater className='IconAction'/>
-                        <h3>Travailler avec GEMAPI c&apos;est :</h3>
+                        <h3>Travailler avec la GEMAPI c&apos;est :</h3>
                         <ul>
                             <li><strong>Augmenter la quantité d’eau :</strong> Favoriser le stockage naturel dans les nappes grâce aux zones humides et aux interactions entre nappes et rivières.</li>
                             <li>
@@ -60,7 +60,7 @@ export const ActionScreen = () => {
                         </ul>
                     </div>
                     <div className="ActionImageContainer">
-                        <div className="ActionImageText">Exemple d&apos;animation sur le territoire : sortie nature organisé par le conservatoire d&apos;espaces naturels Hauts-de-France.</div>
+                        <div className="ActionImageText">Exemple d&apos;animation sur le territoire : sortie nature organisée par le Conservatoire d&apos;Espaces Naturels Hauts-de-France en partenariat avec le SYMSEE.</div>
                         <img src={gemapi}/>
                     </div>
                 </div>

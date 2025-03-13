@@ -1,0 +1,9 @@
+#PanelListArticleScreenContainer {
+    display : flex;
+    flex-wrap : wrap;
+    justify-content : center;
+}
+
+.PanelListArticleScreenitem {
+    margin : 10px;
+}

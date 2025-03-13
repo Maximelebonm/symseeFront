@@ -92,7 +92,7 @@ export const Header =()=>{
                 </Link>
                 <Link to="/appeldoffres">
                     <li className='headerItem' onClick={activeItem}>
-                        APPEL D'OFFRE
+                        APPELS D'OFFRES
                     </li>
                 </Link>
                 <Link to="/documents">

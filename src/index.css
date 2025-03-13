@@ -14,7 +14,7 @@
   --link-color_hover : #0ea5e9;
   --nuance_color1 : #0c4a6e;
   --nuance_color2 :#0369a1;
-  --nuance_color3 : #0ea5e9;
+  --nuance_color3 : #29a3dd;
   --nuance_color4 : #c2e4fa;
   --nuance_color5 : #e0f2fe;
   --nuance_color6 : #eff6ff;
@@ -165,13 +165,14 @@ a {
 
 button{
   border-radius: 30px;
+  margin-top : 10px;
   background-color : var(--nuance_color2);
   padding : 10px 20px;
   font-size: 20px;
   font-weight: 500;
   font-family: 'quickSand', sans-serif;
   border : none;
-  box-shadow: 0px 5px 10px -3px var(--nuance_color1);
+  box-shadow: 0px 3px 7px -3px var(--nuance_color1);
   cursor : pointer;
   color : white;
   &:hover{
@@ -180,4 +181,56 @@ button{
   &:active{
       background-color: var(--nuance_color2);
   }
+}
+
+input {
+  padding : 10px;
+  border-radius: 15px;
+  background-color: var(--nuance_color5);
+  outline: none;
+  border: 0px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+input[type='checkbox'] {
+  width: 30px;
+  height: 30px;
+}
+input[type='file'] {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+  color : var(--font_color);
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+textarea {
+  padding : 10px;
+  border-radius: 15px;
+  height : 200px;
+  margin-top : 10px;
+  background-color: var(--nuance_color5);
+  outline: none;
+  border: 0px;
+  font-size: 16px;
+}
+
+select{
+  margin-top : 10px;
+  padding : 10px;
+  font-size: 16px;
+  border-radius: 10px;;
 }

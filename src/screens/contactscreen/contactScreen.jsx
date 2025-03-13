@@ -75,8 +75,7 @@ export const ContactScreen =()=> {
             </div>
             <div className='ContactItemContainer'>
             <h3>
-                {/* M. Michaël MEUNIER,  */}
-                Animateur rivière
+                Mme Amandine RAUX, Animatrice rivière
             </h3>
             <p>
                 Téléphone : 06 30 53 32 84

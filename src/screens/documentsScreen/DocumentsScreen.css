@@ -1,0 +1,40 @@
+#DocScreenConainter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    max-width : 768px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.docContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width : 100%;
+    padding: 10px;
+  background-color: var(--nuance_color4);
+  border-radius: 15px;
+}
+
+.docLink{
+    text-decoration: none;
+    padding : 5px;
+    background-color: var(--nuance_color3);
+    border-radius: 15px;
+    width : 25%;
+    color : var(--font_color2);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    &:hover{
+        background-color: var(--nuance_color2);
+    }
+    & > div{
+        margin-bottom: 10px;
+    }
+}

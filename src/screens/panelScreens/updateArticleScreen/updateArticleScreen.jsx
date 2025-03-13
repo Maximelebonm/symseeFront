@@ -4,16 +4,9 @@ import './updateArticleScreen.css'
 export const UpdateArticleScreen = () => {
     return (
         <div id='homePanelScreenContainer'>
-        <Link to='/admin/liste'>
-            <div>
-                Liste d'article
-            </div>
-        </Link>
-        <Link to='/admin/create'>
-            <div>
-                créer un article
-            </div>
-        </Link>
+                <Link className='LinkBack' to='/admin/homePanel'>
+                <button>Retour Home</button></Link>
+                <h1>UpdateArticle</h1>
         </div>
     );
 }

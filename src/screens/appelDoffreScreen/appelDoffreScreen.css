@@ -1,0 +1,36 @@
+#appelDoffreContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width : 768px;
+    margin : auto;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.appelDoffreItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    width : 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--font_color2);
+    background-color: var(--nuance_color4);
+}
+
+.appelDoffrelink{
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width : 230px;
+    
+    &:hover{
+        color: var(--nuance_color2);
+    }
+
+}

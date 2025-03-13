@@ -1,0 +1,24 @@
+.docListLinkContainer{
+    display: flex;
+    justify-content: column;
+}
+.docCommandContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.docListModif{
+    color: var(--font_color2);
+    padding : 10px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: var(--nuance_color3);
+    box-shadow: 0px 3px 7px -3px var(--nuance_color1);
+    &:hover{
+        background-color: var(--nuance_color2);
+    }
+}
+
+.modify{
+    min-width : 100%;
+}

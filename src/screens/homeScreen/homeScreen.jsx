@@ -3,8 +3,7 @@ import './homeScreen.css';
 import { HomeSlider } from '../../components/homeSlider/homeSlider';
 import { Link } from 'react-router-dom';
 import { TitleH1 } from '../../components/uiElements/TitleH1/TitleH1';
-import bassin_verssant from  '../../assets/cartes/Bassin_versant.png';
-import interco from '../../assets/cartes/Interco_rework.png';
+
 import { useState } from 'react';
 import { FaHouseFloodWater,FaCloudShowersHeavy } from "react-icons/fa6";
 import { Card_Simple_Link } from '../../components/uiElements/card/Card_Simple';
@@ -13,7 +12,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { useEffect } from 'react';
 
 export const HomeScreen = () => {
-    const [map, setMap] = useState(true);
+
         const [isMobile, setIsMobile] = useState(false);
     
         useEffect(() => {
@@ -47,7 +46,7 @@ export const HomeScreen = () => {
             <TitleH1 title={"APPEL D'URGENCE"} />
             <div className='HomeContactItemContainer'>
                 <div className="contactText">
-                    Vous avez une urgence ? Coulées de boue, arbre tombé ou une inondation par débordement de la rivière.
+                    Vous avez une urgence ? Une coulées de boue, un arbre tombé ou une inondation par débordement de la rivière ?
                 </div>
                 <div className="contactText" id="contactUrgence">
                     Veuillez contacter le :<br/>
@@ -63,24 +62,21 @@ export const HomeScreen = () => {
             <TitleH1 title={'DOCUMENTATION'} />
             <div id="cardDocContainer">
                 <Card_Simple_Link 
-                    title="Guide entretien rivière" 
-                    desc=""
+                    title="Comment entretenir les berges d’un cours d’eau ?" 
+                    desc="Découvrez les bonnes pratiques dans un guide rédigé par la DDTM59, disponible via le lien suivant :"
                     icon=<GiWaterRecycling />
-                    path='/documents'
+                    href='https://www.nord.gouv.fr/Actions-de-l-Etat/Environnement/Eau/Guide-pratique-a-l-usage-des-proprietaires-riverains-de-cours-d-eau'
                 />
                 <Card_Simple_Link 
-                    title="Guide de lutte contre l'érosion des sols" 
-                    desc='' 
+                    title="Qu’est-ce que l’érosion des sols ? Comment l’éviter ?" 
+                    desc='La Chambre d’agriculture des Hauts-de-France a créé un guide pratique qui présente des solutions simples et efficaces pour protéger les sols et préserver les milieux naturels :' 
                     icon=<GiWaterSplash />
-                    path='/documents'
+                    href='https://hautsdefrance.chambres-agriculture.fr/sinformer/ressources-documentation/toutes-les-publications/publication/guide-de-lerosion-2018'
                 />
             </div>
             </section>
             <section id="homeCarteSection">        
-                <div id='homeMap'>
-                        {map ?  <img src={bassin_verssant} className='map'/> : <img src={interco} className='map'/> }
-                        <button onClick={()=>setMap(!map)}>{map ? 'voir Intercomunalité' : 'voir bassin versant'} </button>
-                </div>
+            
                 <div id='homeIntroText'>
                     <TitleH1 title={'INTRODUCTION'} />
                     <p className='homeParagraphe'>
@@ -102,11 +98,11 @@ export const HomeScreen = () => {
             </section>
             <section id="HomeContactSection">
                 <p>
-                    un problème ? Des question ?
+                    Un problème ? Des questions ?
                 </p>
                 <Link to="/contact">
                     <button>
-                        Contacter nous
+                        Contactez-nous
                     </button>
                 </Link>
             </section>

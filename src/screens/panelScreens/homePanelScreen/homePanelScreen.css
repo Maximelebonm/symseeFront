@@ -1,34 +1,42 @@
+/* mobile first */
 #homePanelScreenContainer{
     display : grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
-    width : 100%;
+    margin-top : 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .HomePanelscreenItemContainer{
     width : 100%;
-    padding : 10px;
     background-color : var(--nuance_color3);
     border-radius : 25px;
     height : 150px;
     display: flex;
+    font-size: 24px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: 200ms;
+    text-align: center;
+    color : var(--font_color2);
     &:hover{
-        transform: scale(1.1);
+        transform: scale(1.05);
+        transition: 200ms;
     }
 }
 
-@media (min-width : 400px){
+@media (min-width : 780px){
     #homePanelScreenContainer{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (min-width : 540px){
+@media (min-width : 1080px){
     #homePanelScreenContainer{
-        grid-template-columns: repeat(3, 3fr);
+        grid-template-columns: repeat(5, 3fr);
     }
+    
 }
+

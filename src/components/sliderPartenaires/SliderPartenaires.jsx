@@ -2,31 +2,34 @@ import './SliderPartenaires.css'
 import feder from '../../assets/partenaires/HdF_FEDER.jpg';
 import aeap from '../../assets/partenaires/logo_aeap_v8_rvb.jpg';
 import ca2c from '../../assets/partenaires/Logo_CA2C.jpg';
-import caph from '../../assets/partenaires/Logo_CAPH.png';
+import caph from '../../assets/partenaires/Logo_CAPH.jpg';
 import cavm from '../../assets/partenaires/Logo_CAVM.webp';
 import ccpm from '../../assets/partenaires/Logo_CCPM.png';
 import ccps from '../../assets/partenaires/Logo_CCPS.png';
 import cctso from '../../assets/partenaires/Logo_CCTSO.png';
 import dnord from '../../assets/partenaires/logo_nord_ledepartement.jpg';
-import rnpc from '../../assets/partenaires/Région_Nord_Pas_de_Calais.jpg';
+import rhdf from '../../assets/partenaires/Logo_Region_HDF.jpg';
 import fdag from '../../assets/partenaires/subventions-feder-agglo-maubeuge-header.jpg';
 import cen from '../../assets/partenaires/website-logo_CEN.png';
+import rp from '../../assets/partenaires/LOGO_RP.png';
+import ue from '../../assets/partenaires/UE.jpg';
 import { useEffect,useState } from 'react';
 
 
 const images = [
-    { src: feder, alt: "FEDER" },
-    { src: aeap, alt: "AEAP" },
-    { src: ca2c, alt: "CA2C" },
-    { src: caph, alt: "CAPH" },
-    { src: cavm, alt: "CAVM" },
-    { src: ccpm, alt: "CCPM" },
-    { src: ccps, alt: "CCPS" },
-    { src: cctso, alt: "CCTSO" },
-    { src: dnord, alt: "DNORD" },
-    { src: rnpc, alt: "RNPC" },
-    { src: fdag, alt: "FDAG" },
-    { src: cen, alt: "CEN" },
+  { src: ccpm, alt: "CCPM" },
+  { src: cavm, alt: "CAVM" },
+  { src: ccps, alt: "CCPS" },
+  { src: caph, alt: "CAPH" },
+  { src: ca2c, alt: "CA2C" },
+  { src: cctso, alt: "CCTSO" },
+  { src: aeap, alt: "AEAP" },
+  { src: rp, alt: "Republique française" },
+  {src: ue, alt: "UE"},
+  { src: feder, alt: "FEDER" },
+  { src: dnord, alt: "DNORD" },
+  { src: rhdf, alt: "RHDF" },
+  { src: cen, alt: "CEN" },
   ];
   export const SliderPartenaires = ()=> {
     const [currentIndex, setCurrentIndex] = useState(0);

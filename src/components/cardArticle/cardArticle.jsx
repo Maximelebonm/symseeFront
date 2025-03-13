@@ -41,7 +41,7 @@ export const CardArticle = (props) => {
                 
             <div className="cardArticleDesc">
                 <p className="cardArticleText">
-                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard.
+                    test
                 </p>
             </div>
             </section>

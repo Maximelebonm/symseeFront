@@ -7,15 +7,15 @@ interface CardSimpleProps {
     title: string;
     desc: string;
     icon:  React.ReactNode;
-    path : string;
+    href : string;
 }
 
-export const Card_Simple_Link: React.FC<CardSimpleProps> = ({ title, desc, icon,path }) => {
+export const Card_Simple_Link: React.FC<CardSimpleProps> = ({ title, desc, icon,href }) => {
     return (
-        <Link to={path} id='CardSimpleContainer'>
+        <a href={href} target='blank' id='CardSimpleContainer'>
                 <h3>{title}</h3>
                 <div>{desc}</div>
                 <div id="CardSimpleIcon">{icon}</div>
-        </Link>
+        </a>
     );
 };

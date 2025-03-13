@@ -39,14 +39,17 @@
 #homeMap{
     position: relative;
     width: 100%;
-    max-width : 600px;
-    margin : auto;
+    max-width : 700px;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
     height : auto;
     & button {
         position : absolute;
         margin-top: 10px;
-        bottom : 20px;
-        left: 25%;
+        bottom : 100px;
+        left: 10%;
     }
 }
 .map {
@@ -59,7 +62,7 @@
     margin : auto;
     justify-content: center;
     margin: 50px 10px;
-    max-width : 600px;
+    max-width : 800px;
     gap : 10px;
 }
 .vigilence{
@@ -206,7 +209,7 @@
         & >img{
             width : 100%;
             object-fit: contain;
-            max-height : 600px;
+            
         }
     }
     .ContactHomeContainer{
@@ -214,6 +217,7 @@
         flex-direction: column;      
         align-items: center;
         padding-top : 50px;
+        margin : auto;
         padding-bottom: 50px;
         padding-left: 5px;
         padding-right: 5px;
