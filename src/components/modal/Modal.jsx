@@ -1,9 +1,11 @@
-export const Modal  = ({handleDelete, onClose}) => {
+import "./Modal.css"
+
+export const Modal = ({ handleDelete, onClose }) => {
     return (
-        <div id='modalContainer'>
-            <div id='modalContent'>
+        <div id='modalContainer' onClick={onClose}>
+            <div id='modalContent' onClick={(e) => e.stopPropagation()}>
                 <h1>Attention</h1>
-                <p>Vous êtes sur le point de supprimer un document</p>
+                <p>Êtes vous sûr de vouloir supprimer ?</p>
                 <button onClick={handleDelete}>Supprimer</button>
                 <button onClick={onClose}>Annuler</button>
             </div>

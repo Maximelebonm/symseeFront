@@ -1,4 +1,11 @@
-#panelAppelDoffreUpdateContainer{
-    max-width: 600px;
-    margin : auto;
+#panelAppelDoffreUpdateContainer {
+    margin-top: 0px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#panelAppelDoffreFormContainer {
+    max-width: 760px;
+    margin: auto;
 }

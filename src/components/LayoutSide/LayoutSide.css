@@ -1,0 +1,139 @@
+#panelLayoutContainer {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#panelSidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background-color: var(--nuance_color5);
+    border-right: 1px solid var(--section_background);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#panelSidebarHeader {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid var(--section_background);
+    margin-bottom: 16px;
+}
+
+#panelSidebarHeader h2 {
+    font-size: 18px;
+    color: var(--font_color);
+    margin: 0;
+}
+
+.panelMenuGroup {
+    margin-bottom: 20px;
+}
+
+.panelMenuGroupLabel {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--font_color);
+    padding: 0 20px;
+    margin-bottom: 8px;
+}
+
+.panelMenuGroup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.panelMenuItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    color: var(--font_color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 150ms;
+    border-left: 3px solid transparent;
+}
+
+.panelMenuItem:hover {
+    background-color: var(--body_background);
+}
+
+.panelMenuItem.active {
+    background-color: var(--body_background);
+    border-left-color: var(--header_color);
+    font-weight: 600;
+}
+
+.panelMenuItem.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.panelMenuItem:focus-visible {
+    outline: 2px solid var(--header_color);
+    outline-offset: -2px;
+}
+
+#panelContent {
+    flex: 1;
+    padding: 10px;
+    margin-top : 10px;
+    background-color: var(--body_background);
+    overflow-y: auto;
+}
+
+/* Mobile : sidebar en haut, horizontale et scrollable */
+@media (max-width: 900px) {
+    #panelLayoutContainer {
+        flex-direction: column;
+    }
+
+    #panelSidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        overflow-x: auto;
+        padding: 12px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--section_background);
+    }
+
+    #panelSidebarHeader {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .panelMenuGroup {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .panelMenuGroupLabel {
+        display: none;
+    }
+
+    .panelMenuGroup ul {
+        display: flex;
+    }
+
+    .panelMenuItem {
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .panelMenuItem.active {
+        border-left: none;
+        border-bottom-color: var(--header_color);
+    }
+}

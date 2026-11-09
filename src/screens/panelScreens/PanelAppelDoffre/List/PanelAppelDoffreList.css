@@ -1,33 +1,186 @@
-#panelDoffreList{
-  text-align: center;
+#panelAppelDoffreListContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#panelDoffreList {
+    width: 100%;
+    max-width: 760px;
+}
+
+.panelScreenHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.LinkBack button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid var(--nuance_color2);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.LinkBack button:hover {
+    background-color: var(--nuance_color2);
+}
+
+.createBtn {
+    background-color: var(--nuance_color1);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--nuance_color5);
+    border: 1px solid var(--nuance_color2);
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+}
+
+.searchBar input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 0.95rem;
+    color: var(--font_color);
+}
+
+.statusMessage {
+    text-align: center;
+    color: var(--font_color2);
+    padding: 30px 0;
 }
 
 .panelAppelDoffreListLine {
-  text-align: start;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-radius: 20px;
-  max-width: 600px;
-  margin-top : 20px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--font_color2);
-  background-color: var(--nuance_color4);
+    text-align: start;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    color: var(--font_color2);
+    background-color: var(--nuance_color4);
+}
+
+.doffreContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.doffreHeader {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.doffreHeader h2 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.statusBadge {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.statusBadge.visible {
+    background-color: #d4f1d4;
+    color: #237a23;
+}
+
+.statusBadge.hidden {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.statusBadge.expired {
+    background-color: #f5d7d7;
+    color: #a12727;
+}
+
+.doffreDescription {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.doffreMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85rem;
+    opacity: 0.8;
 }
 
 .panelitemDoffreListCommand {
-  display: flex;
-  flex-direction: column;
-  width : 10%;
-  button {
-    width : 50px;
-    height : 50px;
-    padding : 5px;
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.panelitemDoffreListCommand button {
+    width: 44px;
+    height: 44px;
+    padding: 5px;
+    display: flex;
+    border: none;
     border-radius: 10px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-  }
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modify {
+    background-color: var(--nuance_color2);
+    color: var(--font_color2);
+}
+
+.modify:hover {
+    background-color: var(--nuance_color1);
+}
+
+.delete {
+    background-color: #f5d7d7;
+    color: #a12727;
+}
+
+.delete:hover {
+    background-color: #e8bcbc;
+}
+
+@media (max-width: 600px) {
+    .panelAppelDoffreListLine {
+        flex-direction: column;
+    }
+    .panelitemDoffreListCommand {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
+    }
 }

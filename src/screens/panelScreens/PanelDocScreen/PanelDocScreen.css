@@ -1,7 +1,11 @@
-#panelDocScreenContainer{
-    margin-top: 20px;
+#panelDocScreenContainer {
+    margin-top: 0px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
 }
-#panelDocFormContainer{
-    margin : auto;
-    max-width : 600px;
+
+#panelDocFormContainer {
+    margin: auto;
+    max-width: 760px;
 }

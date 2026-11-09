@@ -6,7 +6,7 @@ export const TitleH1 = ({title,idTitle,idFish})=>{
         <div>
             <div className='titleH1'>
                 <h1 id={idTitle}>{title}</h1>
-                <Carp className='carp' id={idFish} />
+                <Carp className='carp'/>
             </div>
         </div>
     )

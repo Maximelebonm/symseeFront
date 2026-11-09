@@ -10,17 +10,31 @@ import { Card_Simple_Link } from '../../components/uiElements/card/Card_Simple';
 import { GiWaterRecycling,GiWaterSplash } from "react-icons/gi";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useEffect } from 'react';
+import { getArticleHomeApi} from '../../api/article.backend';
+import { CardArticle } from '../../components/cardArticle/cardArticle';
 
 export const HomeScreen = () => {
 
         const [isMobile, setIsMobile] = useState(false);
+        const [articles, setArticles] = useState([]);
     
         useEffect(() => {
-          const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
       
           // Vérifie si l'appareil est mobile
-          const mobileCheck = /android|iphone|ipad|ipod|blackberry|windows phone|webos/i.test(userAgent);
-          setIsMobile(mobileCheck);
+        const mobileCheck = /android|iphone|ipad|ipod|blackberry|windows phone|webos/i.test(userAgent);
+        setIsMobile(mobileCheck);
+
+        const fetchData = async () => {
+            const response = await getArticleHomeApi();
+            if(response.status === 200){
+                response.json().then((data) => {
+                    setArticles(data);
+                })
+            }
+        }
+        fetchData();
+
         }, []);
 
     return (
@@ -37,26 +51,28 @@ export const HomeScreen = () => {
                     VIGICRUES
                 </div>
             </div>
-            <section id='HomeFirstSection'>
-                <div id="homeSliderContainer">
+            <section id='HomeFirstSection'>             
                     <HomeSlider id='homeSlider'/>
-                </div>
+            </section>
+            <section id='HomePresentationSection'>
+                <p>
+                    Le SYMSEE intervient sur 245 km de cours d’eau pour l’amélioration des milieux aquatiques et la prévention des inondations. Son action couvre les rivières de la Selle et ses affluents, l’Écaillon aval et ses affluents, la Naville, la Sensée aval, la Naville Tortue, ainsi que certains affluents directs reliés au canal de l’Escaut.
+                </p>
             </section>
             <section className="ContactHomeContainer">
-            <TitleH1 title={"APPEL D'URGENCE"} />
-            <div className='HomeContactItemContainer'>
-                <div className="contactText">
-                    Vous avez une urgence ? Une coulées de boue, un arbre tombé ou une inondation par débordement de la rivière ?
+                <TitleH1 title={"APPEL D'URGENCE"} />
+                <div className='HomeContactItemContainer'>
+                    <div className="contactText">
+                        Vous avez une urgence ? Une coulée de boue, un arbre tombé ou une inondation par débordement de la rivière ?
+                    </div>
+                    <div className="contactText" id="contactUrgence">
+                        Veuillez contacter le :<br/>
+                        06 40 22 78 32
+                    </div>
+                    {isMobile &&
+                    <a href={`tel:0640227832`}  className="phoneHomeButton "><FaPhoneAlt /> Appeler</a>
+                    }
                 </div>
-                <div className="contactText" id="contactUrgence">
-                    Veuillez contacter le :<br/>
-                    06 40 22 78 32
-                </div>
-                {
-                   isMobile &&
-                <a href={`tel:0640227832`}  className="phoneHomeButton "><FaPhoneAlt /> Appeler</a>
-                }
-            </div>
             </section>
             <section id="HomeDocumentationSection">
             <TitleH1 title={'DOCUMENTATION'} />
@@ -75,26 +91,18 @@ export const HomeScreen = () => {
                 />
             </div>
             </section>
-            <section id="homeCarteSection">        
-            
-                <div id='homeIntroText'>
-                    <TitleH1 title={'INTRODUCTION'} />
-                    <p className='homeParagraphe'>
-                        Le Syndicat Mixte du Sud Est de l’Escaut, précédemment connu sous le nom de Syndicat Mixte du Bassin de la Selle, gère la compétence GEMAPI pour six établissements publics de coopération intercommunale (EPCI). 
-                    </p>
-                    <p className='homeParagraphe'>
-                        Son objectif est de gérer 245 km de cours d&apos;eau, affluents du Fleuve Escaut, répartis sur un territoire de 40 000 hectares englobant 72 communes. 
-                    </p>
-                    <p className='homeParagraphe'>
-                        Les six EPCI concernés sont : la Communauté d’Agglomération de la Porte du Hainaut, la Communauté d’Agglomération Valenciennes Métropole, la Communauté d’Agglomération Caudrésis-Catésis, la Communauté de Communes du Pays Solesmois, La communauté de Communes Thiérache Sambre et Oise, et la Communauté de Communes du Pays de Mormal. 
-                    </p>
-                    <p className='homeParagraphe'>
-                        Parmi les cours d&apos;eau gérés figurent La Selle, Le Béart, la rivière des Essarts, le ruisseau du Cambrésis, le Rogneau, L’Ecaillon aval, Le Vieil Escaut, La Naville, La Naville Tortue, la Sensée aval, et la rivière du Moulin…
-                    </p>
-                </div>             
-            </section>
-            <section>
-
+           
+            <section id="articleSection">
+            <Link to='/actualites'>
+            <button>Voir tout les Articles</button>
+            </Link>
+            <div id="homeArticlesContainer">               
+                {articles.length > 0 && articles?.map((article, index) => {
+                    return (
+                        <CardArticle key={index} props={article}/>
+                    )
+                })}
+            </div>
             </section>
             <section id="HomeContactSection">
                 <p>

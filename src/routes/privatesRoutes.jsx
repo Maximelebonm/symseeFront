@@ -1,21 +1,37 @@
+import { useEffect } from "react";
 import { useAuthContext } from "../screens/authContext";
+import { useNavigate } from 'react-router-dom';
 
-export const PrivateRoutes = ({children,role}) => {
-    const { userDetails } = useAuthContext();
+export const PrivateRoutes = ({ children, role }) => {
+    const { userDetails, isLoading } = useAuthContext();
+    const navigate = useNavigate();
 
-    console.log(userDetails?.role?.length)
-    if(userDetails?.role?.length > 0){
-        const roleMap = userDetails.role.map(item => item.name)
-        
-        console.log(role)
-        const shouldRenderChildren = Array.isArray(role)
-        ? role.some(r => roleMap.includes(r))
-        : roleMap.includes(role); 
+    const roleName = userDetails?.role;
 
-        return shouldRenderChildren ? children : null
+    const hasAccess = Array.isArray(role)
+        ? role.includes(roleName)
+        : roleName === role;
+
+    useEffect(() => {
+        if (isLoading) return;
+
+        // ✅ Vérifie avec Id_user plutôt que roleName
+        // (Id_user persiste même pendant les mises à jour)
+        if (!userDetails?.Id_user) {
+            navigate('/panel/login');
+            return;
+        }
+
+        if (!hasAccess) {
+            navigate('/panel/login');
+        }
+    }, [userDetails?.Id_user, hasAccess, isLoading, navigate]);
+
+    if (isLoading) return null;
+
+    if (!roleName || !hasAccess) {
+        return null;
     }
-    else if(userDetails?.role?.length === undefined && document.cookie !== null){ 
-        console.log('else')
-        // return window.location.href = '/panel/login'
-    }
-}
+
+    return children;
+};

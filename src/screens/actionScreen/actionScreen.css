@@ -63,6 +63,14 @@
         margin-top: 20px;   
     }
 }
+.aboutUsParagrapheIntro{  
+    line-height: 35px;
+    text-align: start;
+    color : var(--font_color);
+    & > p {
+        margin-top: 20px;   
+    }
+}
 .IconAction{
     position : absolute;
     z-index: -1;
@@ -91,6 +99,15 @@
 @media (min-width : 1080px) {
     .aboutUsParagraphe{
         height : 320px;
+        max-width: 900px;
+        margin : auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .aboutUsParagrapheIntro{
+        /* height : 320px; */
         max-width: 900px;
         margin : auto;
         display: flex;

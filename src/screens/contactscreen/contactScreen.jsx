@@ -32,7 +32,7 @@ export const ContactScreen =()=> {
             </div>
             <div className='ContactItemContainer'>
                 <p>
-                    email : syndicat.selle@wanadoo.fr
+                    email : contact@symsee.fr
                 </p>
                 <p>
                     Telephone : 03.27.37.30.93
@@ -44,9 +44,8 @@ export const ContactScreen =()=> {
                     }
                 </div>
                 <div className='ContactItemContainer'>
-
-                <TitleH1 title={'POUR TOUTES URGENCES'}/>
                 </div>
+                <TitleH1 title={'POUR TOUTES URGENCES'}/>
             <div className='ContactItemContainer'>
                 <h3>
                     M. Sébastien DELSART, chef d&apos;équipe

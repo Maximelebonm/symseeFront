@@ -3,10 +3,8 @@ import DenisSemaille from '../../assets/photo/equipe/DenisSemaille.jpg';
 import GeorgesFlamengt from '../../assets/photo/equipe/GeorgesFlamengt.jpg';
 import HenriQuoniou from '../../assets/photo/equipe/HenriQuoniou.jpg';
 import JeanFrançois from '../../assets/photo/equipe/JeanFrançois.jpg';
-import MichelVeniat from '../../assets/photo/equipe/MichelVeniat.jpg';
 import { TitleH1 } from './../../components/uiElements/TitleH1/TitleH1';
 import { MdGroups } from "react-icons/md";
-import { RxAvatar } from "react-icons/rx";
 import { FaUserTie,FaUser  } from "react-icons/fa6"; // user cravate
 import { LiaUsersSolid } from "react-icons/lia"; // techniciens
 import { FaHardHat } from "react-icons/fa";
@@ -38,10 +36,10 @@ export const OrganisationScreen = ()=>{
                     </div>
                     <div className='organisationItem'>
                         <div className='organisationImgContainer'>
-                            <img src={MichelVeniat} className='organisationImg'/>
+                            <img src={JeanFrançois} className='organisationImg'/>
                         </div>
                         <div className='organisationTextContainer'>
-                            <h2>Mr Michel VENIAT</h2>
+                            <h2>Mr Jean-François DELATTRE</h2>
                             <p className='organisationFonction'>2eme VICE-PRÉSIDENT</p>
                         </div>
                     </div>
@@ -57,10 +55,10 @@ export const OrganisationScreen = ()=>{
                 </div>
                 <div className='organisationItem'>
                     <div className='organisationImgContainer'>
-                        <img src={JeanFrançois} className='organisationImg'/>
+                        <img  className='organisationImg'/>
                     </div>
                     <div className='organisationTextContainer'>
-                        <h2>Mr Jean-François DELATTRE</h2>
+                        <h2>MMe Madleen DEPARIS</h2>
                         <p className='organisationFonction'>SECRÉTAIRE</p>
                     </div>
                 </div>

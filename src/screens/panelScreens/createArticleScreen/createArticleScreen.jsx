@@ -1,128 +1,214 @@
-import { Link } from 'react-router-dom'
-import './createArticleScreen.css'
+import { useNavigate } from 'react-router-dom';
+import './createArticleScreen.css';
 import { useState } from 'react';
 import { createArticleApi } from '../../../api/article.backend';
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaTrash } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const CreateArticleScreen = () => {
     const [articleLines, setArticleLines] = useState([]);
-    const handleSubmit =(e)=>{
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const data = new FormData(form);
-        const title = data.get('titleArticle');
-        const subtitle = data.get('subtitleArticle');
-        const description = data.get('descArticle');
-        const media = data.get('MediaArticle');
-        const auteur = data.get('AuteurArticle');
-        const visible = data.get('visible');
-        const formArticleLine = articleLines;
-        
-        console.log(form);
-        console.log(articleLines);
+        const media = data.get('file');
 
+        let type = '';
+        if (['image/png', 'image/jpg', 'image/jpeg'].includes(media?.type)) {
+            type = 'image';
+        } else if (media?.type === 'application/pdf') {
+            type = 'pdf';
+        }
+        data.append('type', type);
 
-        // const fetch = async() => {
-        //     const response = await createArticleApi(title, subtitle, description, media, auteur, visible,articleLines);
-        //     console.log(response);
-        //     if(response.status === 200){
-        //         alert('article crée');
-        //     }
-        // }
-        // fetch();
-    }
+        const submit = async () => {
+            setIsSubmitting(true);
+            try {
+                const response = await createArticleApi(data);
+                if (response?.status === 200) {
+                    toast.success('Article créé avec succès, retour à la liste.', { autoClose: 2000 });
+                    setTimeout(() => navigate('/panel/article/list'), 2000);
+                    return;
+                }
+                if (response?.status === 409) {
+                    toast.error('Un fichier du même nom existe déjà.', { autoClose: 3000 });
+                } else if (response?.status === 413) {
+                    toast.error('Fichier trop volumineux.', { autoClose: 3000 });
+                } else if (response?.status === 500) {
+                    toast.error('Erreur serveur.', { autoClose: 3000 });
+                } else {
+                    toast.error('Le serveur ne répond pas.', { autoClose: 3000 });
+                }
+            } catch (err) {
+                toast.error('Une erreur est survenue.', { autoClose: 3000 });
+            } finally {
+                setIsSubmitting(false);
+            }
+        };
+        submit();
+    };
 
-    
-
-    const addlineArticle = () => {
+    const addLineArticle = () => {
         setArticleLines([
             ...articleLines,
-            { title: '', subtitle: '', body: '', media: '',pictutre_position: 0}
-        ])
-    }
+            { title: '', subtitle: '', body: '', media: '', positionMedia: 0 }
+        ]);
+    };
 
-    const handleChange = (e,obj,index) => {
-        const newLineArticle = [...articleLines];
+    const removeLineArticle = (index) => {
+        setArticleLines(articleLines.filter((_, i) => i !== index));
+    };
 
-        newLineArticle.forEach((line, i) => {
-            if(i === index){
-                console.log(obj);
-                switch(obj){
-                    case 'titleLine': line.title = e; break;
-                    case 'subtitleLine': line.subtitle = e; break;
-                    case 'bodyLine': line.body = e; break;
-                    case 'media': line.media = e; break;
-                    case 'positionMedia': line.positionMedia = e; break;
-                    default: break;
-                }
-            }
-        });
+    const handleChange = (value, field, index) => {
+        const newLines = [...articleLines];
+        newLines[index] = { ...newLines[index], [field]: value };
+        setArticleLines(newLines);
+    };
 
-        setArticleLines(newLineArticle);
-
-    }
     return (
         <div id='CreateArticleScreenContainer'>
-        <Link className='LinkBack' to='/panel'>
-        <button>Retour Home</button></Link>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
-            <div className=''>
-            <label>visibilité de l&apos;article </label>
-            <input type='checkbox' name='visible'></input>
+            <ToastContainer />
+            <div className='panelScreenHeader'>
+                <h1>Créer une actualité</h1>
             </div>
-                <div className='CreateArticleScreenItem'>
-                    <label>Titre de l&apos;article </label>
-                    <input type='text' name='titleArticle'></input>
-                </div>
-                <div className='CreateArticleScreenItem'>
-                    <label>Sous titre de l&apos;aricle </label>
-                    <input type='text' name='subtitleArticle'></input>
-                </div>
-                <div className='CreateArticleScreenItem'>
-                    <label>Description de l&apos;aricle </label>
-                    <textarea  wrap='soft ' type='text' name='descArticle'></textarea>
-                </div>
-                <div className='CreateArticleScreenItem'>
-                    <label>image acceuil de l&apos;aricle </label>
-                    <input type='file' name='MediaArticle'></input>
-                </div>
-                <div className='CreateArticleScreenItem'>
-                    <label>Auteur de l&apos;aricle </label>
-                    <input type='text' name='AuteurArticle'></input>
-                </div>
-                <div id='lineArticle'>
-                {articleLines?.map((line, index) => (
-                        <div key={index}>        
-                            <div className='lineArticleContainer'>
-                                <div className='CreateArticleScreenItem'>
-                                <label>Titre du paragraphe </label>
-                                <input type='text' name='titleLine' value={line.title} onChange={(e)=>handleChange(e.target.value, 'titleLine', index)}></input>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
+
+                <fieldset className='CreateArticleScreenItem checkboxItem'>
+                    <input type='checkbox' name='visible' id='visible' defaultChecked />
+                    <label htmlFor='visible'>Visible sur le site</label>
+                </fieldset>
+
+                <fieldset className='formSection'>
+                    <legend>Informations générales</legend>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='titleArticle'>Titre de l'article</label>
+                        <input type='text' id='titleArticle' name='titleArticle' required />
+                    </div>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='subtitleArticle'>Sous-titre de l'article</label>
+                        <input type='text' id='subtitleArticle' name='subtitleArticle' />
+                    </div>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='descArticle'>Contenu de l'article</label>
+                        <textarea id='descArticle' name='descArticle' rows={5} />
+                    </div>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='lienArticle'>Lien externe</label>
+                        <input type='text' id='lienArticle' name='lienArticle' />
+                    </div>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='AuteurArticle'>Auteur de l'article</label>
+                        <input type='text' id='AuteurArticle' name='AuteurArticle' />
+                    </div>
+                </fieldset>
+
+                <fieldset className='formSection'>
+                    <legend>Média principal</legend>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='file'>Image d'accueil de l'article</label>
+                        <input type='file' id='file' name='file' required />
+                    </div>
+
+                    <div className='CreateArticleScreenItem'>
+                        <label htmlFor='positionMedia'>Position du média</label>
+                        <input type='number' id='positionMedia' name='positionMedia' min={0} max={1} defaultValue={0} required />
+                    </div>
+                </fieldset>
+
+                <fieldset className='formSection'>
+                    <legend>Paragraphes de l'article</legend>
+
+                    <div id='lineArticle'>
+                        {articleLines.map((line, index) => (
+                            <div key={index} className='lineArticleContainer'>
+                                <div className='lineArticleHeader'>
+                                    <span>Paragraphe {index + 1}</span>
+                                    <button
+                                        type='button'
+                                        className='removeLineBtn'
+                                        onClick={() => removeLineArticle(index)}
+                                        aria-label='Supprimer ce paragraphe'
+                                    >
+                                        <FaTrash />
+                                    </button>
                                 </div>
+
                                 <div className='CreateArticleScreenItem'>
-                                    <label>Sous titre du paragraphe </label>
-                                    <input type='text' name='subtitleLine' value={line.subtitle} onChange={(e)=>handleChange(e.target.value, 'subtitleLine', index)}></input>
+                                    <label htmlFor={`titleLine-${index}`}>Titre du paragraphe</label>
+                                    <input
+                                        type='text'
+                                        id={`titleLine-${index}`}
+                                        name='titleLine'
+                                        value={line.title}
+                                        onChange={(e) => handleChange(e.target.value, 'title', index)}
+                                    />
                                 </div>
+
                                 <div className='CreateArticleScreenItem'>
-                                    <label>corps du paragraphe </label>
-                                    <textarea type='text' name='bodyLine' value={line.body} onChange={(e)=>handleChange(e.target.value, 'bodyLine', index)}></textarea>
+                                    <label htmlFor={`subtitleLine-${index}`}>Sous-titre du paragraphe</label>
+                                    <input
+                                        type='text'
+                                        id={`subtitleLine-${index}`}
+                                        name='subtitleLine'
+                                        value={line.subtitle}
+                                        onChange={(e) => handleChange(e.target.value, 'subtitle', index)}
+                                    />
                                 </div>
+
                                 <div className='CreateArticleScreenItem'>
-                                    <label>image du paragraphe </label>
-                                    <input type='file' name='pictureLine' value={line.body} onChange={(e)=>handleChange(e.target.value, 'body', index)}></input>
+                                    <label htmlFor={`bodyLine-${index}`}>Corps du paragraphe</label>
+                                    <textarea
+                                        id={`bodyLine-${index}`}
+                                        name='bodyLine'
+                                        rows={4}
+                                        value={line.body}
+                                        onChange={(e) => handleChange(e.target.value, 'body', index)}
+                                    />
                                 </div>
+
                                 <div className='CreateArticleScreenItem'>
-                                    <label>position image </label>
-                                    <input type='number' name='pictutre_position' value={line.pictutre_position} onChange={(e)=>handleChange(e.target.value, 'body', index)}></input>
+                                    <label htmlFor={`pictureLine-${index}`}>Image du paragraphe</label>
+                                    <input
+                                        type='file'
+                                        id={`pictureLine-${index}`}
+                                        name='pictureLine'
+                                        onChange={(e) => handleChange(e.target.files[0], 'media', index)}
+                                    />
+                                </div>
+
+                                <div className='CreateArticleScreenItem'>
+                                    <label htmlFor={`positionLine-${index}`}>Position de l'image</label>
+                                    <input
+                                        type='number'
+                                        id={`positionLine-${index}`}
+                                        name='pictutre_position'
+                                        min={0}
+                                        value={line.positionMedia}
+                                        onChange={(e) => handleChange(e.target.value, 'positionMedia', index)}
+                                    />
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-                <div id="addLinearticle" onClick={addlineArticle}>
-                    ajouter une Ligne <FaPlus />
-                </div>
-                {<button type='submit'> envoyer l&apos;article</button>}
+                        ))}
+                    </div>
+
+                    <button type='button' id='addLinearticle' onClick={addLineArticle}>
+                        Ajouter un paragraphe <FaPlus />
+                    </button>
+                </fieldset>
+
+                <button type='submit' className='submitBtn' disabled={isSubmitting}>
+                    {isSubmitting ? 'Envoi en cours...' : "Publier l'article"}
+                </button>
             </form>
         </div>
-    )
-}
+    );
+};

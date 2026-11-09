@@ -1,71 +1,76 @@
-.cardArticleContainer{
-    width : 100%;
-    border-radius: 20px;
+/* Mobile First */
+
+.cardArticleContainer{ 
+    margin : 0px;
+    border-radius: 15px;
     position : relative;
-    height : 328px;
     cursor: pointer;
-    img {
-        transition: transform 1s;
-    }
+    transition: 200ms;
+    width : 100%;
+    background-color: var(--nuance_color5);
     &:hover{
-         box-shadow: 0px 0px 15px var(--nuance_color3);
-         & img{
-            transform: scale(1.2);
+        transform: scale(1.03);
+        transition: 200ms;
+        box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.cardArticleContainer:focus-visible {
+    outline: 2px solid var(--header_color);
+    outline-offset: 3px;
+    border-radius: 15px;
+}
+
+.cardArticleSubtitle {
+    font-size: 14px;
+    color: var(--font_color);
+    text-align: center;
+    margin: 0;
+}
+
+.cardArticleCta {
+    font-size: 13px;
+    color: var(--font_color);
+    text-align: center;
+    font-style: italic;
+}
+
+.cardArticleHead{
+    border-radius : 15px;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    height : 200px;
+    overflow: hidden;
+    object-fit: cover;
+    
+    & > div {
+        width : 65%;
+        top : 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        & > h1{    
+
+            font-size: 20px;   
+            color : var(--font_color);
+            text-align: center;
         }
     }
+    & > img {
+        width : 35%;
+        height : 200px;
+        border-radius : 15px;
+
+        overflow: hidden;
+        object-fit: cover;
+    }
 }
 
-.cardArticleHead, .cardArticleLine{
-    position: relative;
-}
-.cardArticleVague{
-    position : absolute;
-    z-index: 3;
-    fill: var(--nuance_color2);
-    bottom : 36px;
-    width : 100%;
-}
-
-.cardArticleDesc{
-    position : absolute;
-    z-index : 4;
-    top : -40px;
-    width :100%;
-    height : 60px;
-    padding: 0px 10px 10px 10px;
-    border-radius : 0px 0px 20px 20px;
-    background-color: var(--nuance_color2);
-}
-.cardArticleText{
-    overflow: hidden;
-    text-align: left;
-    min-width : 100%;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    color : white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.cardArticleHead{
-    border-radius : 20px 20px 0px 0px;
-    text-shadow: 0px 0px 5px black;
-    justify-content: center;
-    height : 250px;
-    z-index: 3;
-    overflow: hidden;
-    &> img {
-        z-index :-1;
-        position : absolute;
-        top : 0px;
-        width : 100%;
-        background-image: cover;
-        height : 100%;
-        border-radius : 20px 20px 0px 0px;
-        object-fit:cover;
+@media (min-width: 768px){
+    .cardArticleContainer{ 
+        margin : 10px;
     }
-    &>h3, >h2 {
-        padding : 10px;
-        text-transform: uppercase;
-        color : white;
-    }
+    
 }

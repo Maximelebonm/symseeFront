@@ -1,0 +1,190 @@
+/* ProfileScreen.css */
+.profile-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-back:hover {
+    background: #f0f0f0;
+}
+
+.profile-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #4a5568;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.profile-info-summary h2 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+}
+
+.profile-info-summary p {
+    margin: 0 0 8px 0;
+    color: #666;
+}
+
+.profile-role-badge {
+    display: inline-block;
+    background: #4a5568;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.profile-form {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.profile-form h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.profile-form h3:not(:first-child) {
+    margin-top: 32px;
+}
+
+.form-hint {
+    color: #888;
+    font-size: 13px;
+    margin: -8px 0 16px 0;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+    transition: border-color 0.2s;
+}
+
+.input-with-icon:focus-within {
+    border-color: #4a5568;
+}
+
+.input-with-icon svg {
+    color: #888;
+    flex-shrink: 0;
+}
+
+.input-with-icon input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    gap: 12px;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #e53e3e;
+    border: 1px solid #e53e3e;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background: #e53e3e;
+    color: white;
+}
+
+.btn-save {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #4a5568;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn-save:hover {
+    background: #2d3748;
+}
+
+.btn-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

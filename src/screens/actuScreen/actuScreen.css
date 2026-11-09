@@ -9,11 +9,11 @@
     padding : 10px;
     display : grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+    gap: 10px;
     justify-items: center;
 }
 
-@media (min-width : 580px){
+@media (min-width : 640px){
     #actuScreenArticlesContainer{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -27,6 +27,11 @@
 
 @media (min-width : 1200px){
     #actuScreenArticlesContainer{
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width : 1640px){
+    #actuScreenArticlesContainer{
+        grid-template-columns: repeat(3, 1fr);
     }
 }

@@ -29,7 +29,7 @@ const [documents, setDocuments] = useState([]);
     return (
         <div id="DocScreenConainter">
         <TitleH1 title={'DOCUMENTS'}/>
-            {documents.map((doc, index) => {
+            {documents.length > 0 && documents.map((doc, index) => {
                 const date = formatDate(doc.created_date
                 );
                 {/* date.getFullYear(); */}
@@ -51,7 +51,7 @@ const [documents, setDocuments] = useState([]);
                         </div>
                         <a href={ configStorage()+ '/'+doc.storage_doc} target='_blank' className="docLink">
                             <div>
-                                Consulté le document 
+                                Consulter le document 
                             </div>
                             <GrDocumentPdf size={50}/>
                          </a>

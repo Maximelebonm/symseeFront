@@ -1,9 +1,218 @@
 #PanelListArticleScreenContainer {
-    display : flex;
-    flex-wrap : wrap;
-    justify-content : center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panelScreenHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.panelScreenHeader h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.LinkBack button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid var(--nuance_color2);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.LinkBack button:hover {
+    background-color: var(--nuance_color2);
+}
+
+.panelListToolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 900px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.createBtn {
+    background-color: var(--nuance_color1);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.createBtn:hover {
+    opacity: 0.9;
+}
+
+.panelListState {
+    padding: 40px 20px;
+    color: var(--font_color);
+    opacity: 0.7;
+    text-align: center;
+}
+
+.panelArticleListContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    gap: 15px;
 }
 
 .PanelListArticleScreenitem {
-    margin : 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: var(--nuance_color5);
+    padding: 15px;
+    border-radius: 15px;
+    color: var(--font_color);
+    transition: box-shadow 0.2s ease;
+}
+
+.PanelListArticleScreenitem:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.panelArticleText {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.articleTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.articleSubtitle {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    font-style: italic;
+}
+
+.articleDescription {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.articleAuteur {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.visibilityBadge {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.visibilityBadge.visible {
+    background-color: #d7f5db;
+    color: #1e7e34;
+}
+
+.visibilityBadge.hidden {
+    background-color: #f5d7d7;
+    color: #a12727;
+}
+
+.panelArticleActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.panelArticleMedia {
+    border-radius: 15px;
+    padding: 10px;
+    background-color: var(--nuance_color4);
+    min-width: 130px;
+    min-height: 130px;
+    text-align: center;
+}
+
+.panelArticleMedia > img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.panelArticleMedia > a {
+    width: 110px;
+    display: block;
+    height: 110px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 8px;
+}
+
+.actionButtons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modify {
+    background-color: var(--nuance_color2);
+    color: var(--font_color2);
+}
+
+.modify:hover {
+    background-color: var(--nuance_color1);
+}
+
+.delete {
+    background-color: #f5d7d7;
+    color: #a12727;
+}
+
+.delete:hover {
+    background-color: #e8bcbc;
+}
+
+@media (max-width: 600px) {
+    .PanelListArticleScreenitem {
+        flex-direction: column;
+    }
+    .panelArticleActions {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

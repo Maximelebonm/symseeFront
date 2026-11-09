@@ -9,10 +9,9 @@ import ccps from '../../assets/partenaires/Logo_CCPS.png';
 import cctso from '../../assets/partenaires/Logo_CCTSO.png';
 import dnord from '../../assets/partenaires/logo_nord_ledepartement.jpg';
 import rhdf from '../../assets/partenaires/Logo_Region_HDF.jpg';
-import fdag from '../../assets/partenaires/subventions-feder-agglo-maubeuge-header.jpg';
 import cen from '../../assets/partenaires/website-logo_CEN.png';
 import rp from '../../assets/partenaires/LOGO_RP.png';
-import ue from '../../assets/partenaires/UE.jpg';
+import ue from '../../assets/partenaires/UE.png';
 import { useEffect,useState } from 'react';
 
 

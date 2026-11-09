@@ -1,52 +1,39 @@
 import './cardArticle.css';
-import imageforet from '../../assets/photo/terrain/foret.png'
-import MemoWave from '../SvgComponent/wave/wave';
-import { useState, useEffect,useRef } from 'react';
+import imageforet from '../../assets/photo/terrain/foret.jpg';
 import { Link } from 'react-router-dom';
+import { configStorage } from '../../helpers/config';
 
-export const CardArticle = (props) => {
-    const [divWidth, setDivWidth] = useState(0);
-    const myDiv = useRef(null);
+export const CardArticle = ({ props }) => {
+    const { title, subtitle, articleMedia, Id_article } = props;
 
-    const {title , id} = props
-    useEffect(() => {
-        const handleResize = () => {
-            if (myDiv.current) {
-                setDivWidth(myDiv.current.offsetWidth);
-            }
-        };
-
-        handleResize(); // Appel une fois pour définir la largeur initiale
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    const media = articleMedia?.[0];
+    const imageSrc = media?.type === 'image'
+        ? `${configStorage()}/${media.storage}`
+        : imageforet;
 
     return (
-        <Link to={{ pathname:'/article/'+ id,  state: { id: id }}} className='cardArticleContainer'>
-
-        <div  ref={myDiv}>
-        <div className='cardArticlePos'>
-            <section className='cardArticleHead'>
-            <h3>
-                {title}
-            </h3>
-            <img src={imageforet}/>
-
-            </section>
-            <MemoWave className="cardArticleVague" width={divWidth}/>
-            <section className='cardArticleLine'>
-                
-            <div className="cardArticleDesc">
-                <p className="cardArticleText">
-                    test
-                </p>
-            </div>
-            </section>
-            </div>
-        </div>
+        <Link
+            to={`/article/${Id_article}`}
+            state={props}
+            className="cardArticleContainer"
+            aria-label={`Lire l'article : ${title}`}
+        >
+            <article className="cardArticlePos">
+                <section className="cardArticleHead">
+                    <img
+                        src={imageSrc}
+                        alt={media?.type === 'image' ? title : ''}
+                        loading="lazy"
+                    />
+                    <div>
+                        <h2>{title}</h2>
+                        {subtitle && <p className="cardArticleSubtitle">{subtitle}</p>}
+                        <span className="cardArticleCta">
+                            Cliquez pour lire l'article
+                        </span>
+                    </div>
+                </section>
+            </article>
         </Link>
-    )
-}  
+    );
+};

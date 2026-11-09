@@ -38,7 +38,7 @@ export const createAppelDoffreApi = async (pTitle, pDescription, pAddresse,pDate
             },
             credentials: 'include'
         });
-        return response.json();
+        return response;
     } catch (error) {
         console.log(error);
     }

@@ -1,107 +1,194 @@
 import './header.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useCallback } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import MemoLogoHeader from '../SvgComponent/logoheader/logoHeader';
 import { ToggleSwitch } from '../uiElements/toggleSwitch/toggleSwitch';
+import { useAuthContext } from '../../screens/authContext';
+import { IoIosArrowDown } from "react-icons/io";
+import { useRef } from 'react';
 
-export const Header =()=>{
-    const [isActive, setIsActive] = useState(false);
-    const [isMobile,setIsMobile] = useState(window.innerWidth<= 760);
+export const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 780);
+    const [openSubmenu, setOpenSubmenu] = useState(null);
+    const closeTimeoutRef = useRef(null);
 
-    const toggleActive = () => {
-        setIsActive(!isActive);
-    }
+    const { userDetails } = useAuthContext();
+    const location = useLocation();
 
-    useEffect(()=>{
-                const nav = document.querySelectorAll('#headerNav .headerItem');
-                nav.forEach(item => {
-                    item.addEventListener('click', function() {
-                        nav.forEach((item)=>{
-                            item.classList.remove('active')
-                        })    
-                        this.classList.add('active')
-                    });
-                });
-    },[])
-    
-    window.addEventListener('resize', () => {
-        const width = window.innerWidth; // Largeur de la fenêtre
-        if (width <= 760) {
-            setIsMobile(true)
-        }   else{
-            setIsMobile(false)
+    useEffect(() => {
+        setIsMenuOpen(false);
+        setOpenSubmenu(null);
+    }, [location]);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 780);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const toggleMenu = () => setIsMenuOpen(prev => !prev);
+
+    const handleNavClick = () => {
+        if (isMobile) setIsMenuOpen(false);
+        setOpenSubmenu(null); // ferme aussi sur desktop après un clic
+    };
+
+    const handleSubmenuToggle = useCallback((menu) => {
+        if (isMobile) {
+            setOpenSubmenu(prev => (prev === menu ? null : menu));
         }
-    });
-    const activeItem = () => {
-        const clickedItem = window.innerWidth;
-        if(clickedItem <= 760){
-            toggleActive() 
-        }
-      
+    }, [isMobile]);
+
+    // Desktop hover handlers
+    const handleMouseEnter = (menu) => {
+        if (isMobile) return;
+        clearTimeout(closeTimeoutRef.current);
+        setOpenSubmenu(menu);
+    };
+
+    const handleMouseLeave = () => {
+        if (isMobile) return;
+        setOpenSubmenu(null);
+    };
+
+    const handleParentClick = (e, menu) => {
+    if (isMobile) {
+        e.preventDefault(); // empêche la navigation
+        handleSubmenuToggle(menu);
+    } else {
+        handleNavClick(); // comportement normal desktop
     }
+};
+
+    const isActive = (path) => location.pathname === path ? 'headerItem active' : 'headerItem';
 
     return (
-        <nav id='headerContainer' className={isActive ? 'active' : ''}>
-              <div>
-                <div id='icons' onClick={toggleActive}>
+        <nav id="headerContainer" className={isMenuOpen ? 'active' : ''}>
+            <button
+                id="icons"
+                onClick={toggleMenu}
+                aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+                aria-expanded={isMenuOpen}
+            />
 
-                </div>
+            <div id="headerLogoContainer">
+                <Link to="/"><MemoLogoHeader /></Link>
             </div>
-        <div id='headerLogoContainer' className=''>
-             <Link to='/'><MemoLogoHeader/> </Link>
-        </div>
-            <ul id='headerNav' onClick={activeItem}>
-                <Link to='/'>
-                    <li className='headerItem' onClick={activeItem}>
-                        ACCUEIL 
-                    </li>
-                </Link>
-                <Link to='/actions'>
-                    <li className='headerItem' onClick={activeItem}>
-                        NOS ACTIONS
-                    </li>
-                </Link>
-                {/* {!isMobile ?
-                <li className='headerItem hasSubmenu'>
-                <Link to='/about'><span className='headerItem'>NOS ACTIONS<IoIosArrowDown /></span></Link>
-                    <ul className={`submenu`}>
-                        <Link to='/about'><li onClick={activeItem}>NOS ACTIONS</li></Link>
-                        <Link to='/gemapi'><li onClick={activeItem}>GEMAPI</li></Link>
-                    </ul>
-                </li> : 
-                <>
-                    <Link to='/about'><li onClick={activeItem} className='headerItem'>À PROPOS DE NOUS</li></Link>
-                    <Link to='/gemapi'><li onClick={activeItem} className='headerItem'>GEMAPI</li></Link>
-                </>   
-             } */}
-                <Link to='/organisation'>
-                    <li className='headerItem' onClick={activeItem}>
-                        ORGANISATION
-                    </li>
-                </Link>
-                <Link to="/communes">
-                    <li className='headerItem' onClick={activeItem}>
-                        TERRITOIRE
-                    </li>
-                </Link>
-                <Link to='/contact'>
-                    <li className='headerItem' onClick={activeItem}>
+
+            <ul id="headerNav">
+                <li>
+                    <Link to="/" className={isActive('/')} onClick={handleNavClick}>
+                        ACCUEIL
+                    </Link>
+                </li>
+
+<li
+    className="hasSubmenu"
+    onMouseEnter={() => handleMouseEnter('actions')}
+    onMouseLeave={handleMouseLeave}
+>
+    <div className="submenuTrigger">
+        <Link
+            to="/actions"
+            className="headerItem"
+            onClick={(e) => handleParentClick(e, 'actions')}
+        >
+            NOS ACTIONS
+        </Link>
+        {isMobile && (
+            <button
+                className={`arrowBtn ${openSubmenu === 'actions' ? 'open' : ''}`}
+                onClick={() => handleSubmenuToggle('actions')}
+                aria-label="Afficher sous-menu Nos Actions"
+                tabIndex={-1} // évite double tab-stop, le lien suffit
+            >
+                <IoIosArrowDown />
+            </button>
+        )}
+    </div>
+    <ul className={`submenu ${openSubmenu === 'actions' ? 'open' : ''}`}>
+        <li>
+            <Link to="/actions" className="headerItem" onClick={handleNavClick}>
+                NOS ACTIONS
+            </Link>
+        </li>
+        <li>
+            <Link to="/actualites" className="headerItem" onClick={handleNavClick}>
+                ACTUALITÉS
+            </Link>
+        </li>
+    </ul>
+</li>
+
+
+{/* LE SYMSEE */}
+<li
+    className="hasSubmenu"
+    onMouseEnter={() => handleMouseEnter('symsee')}
+    onMouseLeave={handleMouseLeave}
+>
+    <div className="submenuTrigger">
+        <Link
+            to="/organisation"
+            className="headerItem"
+            onClick={(e) => handleParentClick(e, 'symsee')}
+        >
+            LE SYMSEE
+        </Link>
+        {isMobile && (
+            <button
+                className={`arrowBtn ${openSubmenu === 'symsee' ? 'open' : ''}`}
+                onClick={() => handleSubmenuToggle('symsee')}
+                aria-label="Afficher sous-menu Le Symsee"
+                tabIndex={-1}
+            >
+                <IoIosArrowDown />
+            </button>
+        )}
+    </div>
+    <ul className={`submenu ${openSubmenu === 'symsee' ? 'open' : ''}`}>
+        <li>
+            <Link to="/organisation" className="headerItem" onClick={handleNavClick}>
+                ORGANISATION
+            </Link>
+        </li>
+        <li>
+            <Link to="/communes" className="headerItem" onClick={handleNavClick}>
+                TERRITOIRE
+            </Link>
+        </li>
+    </ul>
+</li>
+
+                <li>
+                    <Link to="/contact" className={isActive('/contact')} onClick={handleNavClick}>
                         CONTACT
-                    </li>
-                </Link>
-                <Link to="/appeldoffres">
-                    <li className='headerItem' onClick={activeItem}>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to="/appeldoffres" className={isActive('/appeldoffres')} onClick={handleNavClick}>
                         APPELS D'OFFRES
-                    </li>
-                </Link>
-                <Link to="/documents">
-                    <li className='headerItem' onClick={activeItem}>
+                    </Link>
+                </li>
+
+                <li>
+                    <Link to="/documents" className={isActive('/documents')} onClick={handleNavClick}>
                         DOCUMENTS
+                    </Link>
+                </li>
+
+                {userDetails?.role?.[0]?.name === 'administrator' && (
+                    <li>
+                        <Link to="/panel" className={isActive('/panel')} onClick={handleNavClick}>
+                            PANEL
+                        </Link>
                     </li>
-                </Link>
+                )}
             </ul>
-            <ToggleSwitch/>
+
+            <ToggleSwitch />
         </nav>
-    )
-}
+    );
+};

@@ -29,10 +29,11 @@ export const createDocumentApi = async (pAllForm) => {
            body: pAllForm,
            credentials: 'include'
        });
-       return response.json() ;
+       
+       return response;
    } catch (error) {
-       console.log(error);
-   }
+       return error.response
+    }
 }
 
 export const updateDocumentApi = async (pAllForm,id) => {
@@ -43,7 +44,7 @@ export const updateDocumentApi = async (pAllForm,id) => {
        });
        return response;
    } catch (error) {
-       console.log(error);
+       return error.response
    }
 }
 

@@ -1,32 +1,34 @@
-import { createContext, useState, useEffect,useContext } from 'react';
-import { decodeCookies } from '../helpers/cookieReader';
+import { createContext, useState, useEffect, useContext } from 'react';
+import { getAuthApi } from '../api/user.backend';
 const AuthContext = createContext();
 
 export const useAuthContext = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [userDetails, setUserDetails] = useState({});
+  const [userDetails, setUserDetails] = useState(null); // null = pas encore chargé
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(()=>{
-    if(document.cookie){
-        const cookies = document.cookie.split('; ')
-        let authCookie = null
-        for (let cookie of cookies) {
-            if (cookie.startsWith('auth=')) {
-                authCookie = cookie.substring('auth='.length); 
-                break;
-            }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getAuthApi();
+        if (response.status === 200) {
+          const data = await response.json();
+          setUserDetails(data);
+        } else {
+          setUserDetails({});
         }
-        const decodeCookie = async()=>{
-            let cookie = decodeCookies(authCookie)
-            setUserDetails(cookie)
-        }
-        decodeCookie()
-    }
-},[])
+      } catch (err) {
+        setUserDetails({});
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ userDetails, setUserDetails }}>
+    <AuthContext.Provider value={{ userDetails, setUserDetails, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

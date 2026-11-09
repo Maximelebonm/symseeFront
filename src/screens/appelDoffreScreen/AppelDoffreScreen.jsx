@@ -10,7 +10,6 @@ export const AppelDoffreScreen = ()=>{
     useEffect(() => {
         const fetchData = async() => {
         const response = await getAllAppelDoffreApi() ;
-        console.log(response);
         if(response.status === 200){
             response.json().then(response => {
                 setAppelDoffre(response);
@@ -26,12 +25,11 @@ export const AppelDoffreScreen = ()=>{
         return date.toLocaleDateString('fr-FR', options);
     };
 
-        console.log(appelDoffre.length);
+        
     return (
         <div id='appelDoffreContainer' >
         <TitleH1 title={'APPELS D\'OFFRES'}/>
-            {appelDoffre.map((item, index) => {
-                console.log(item);
+            {appelDoffre.length > 0 && appelDoffre.map((item, index) => {
                 const date = formatDate(item.datelimite);
                 return (
                     <div key={index} className='appelDoffreItem'>
